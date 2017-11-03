@@ -18,14 +18,15 @@ class ClaimProgressView: UIView {
     let closed = UILabel()
     
     let backgroundLayer = CAShapeLayer()
-    @IBInspectable var backGroundColor = UIColor.gray {
+    @IBInspectable var backGroundColor: UIColor = UIColor.gray {
         didSet {
             self.configureView()
         }
     }
     
     let foregroundLayer = CAShapeLayer()
-    @IBInspectable var foreGroundColor = UIColor.black {
+    
+    @IBInspectable var foreGroundColor: UIColor = UIColor.yellow {
         didSet {
             self.configureView()
         }
