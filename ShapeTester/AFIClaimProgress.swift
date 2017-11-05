@@ -17,19 +17,19 @@ class AFIClaimProgress: UIView {
     
     @IBInspectable var progressLineColor: UIColor = UIColor.blue {
         didSet {
-            self.progressLineLayer.strokeColor = self.progressLineColor.cgColor
+            //self.progressLineLayer.strokeColor = self.progressLineColor.cgColor
         }
     }
     
     @IBInspectable var backgroudLineColor: UIColor = UIColor.gray {
         didSet {
-            self.backgroundLineLayer.strokeColor = self.backgroudLineColor.cgColor
+           // self.backgroundLineLayer.strokeColor = self.backgroudLineColor.cgColor
         }
     }
     
     @IBInspectable var completedProgressColor: UIColor = UIColor.green {
         didSet {
-            self.completedCircleLayer.backgroundColor = self.completedProgressColor.cgColor
+           // self.completedCircleLayer.backgroundColor = self.completedProgressColor.cgColor
         }
     }
     
@@ -62,17 +62,27 @@ class AFIClaimProgress: UIView {
         
         //completed circles
         self.completedCircleLayer.frame = CGRect(origin: CGPoint(x: 0.0, y:2.0), size: CGSize(width: 4.0, height: 4.0))
-        self.completedCircleLayer.fillColor = nil
-        self.completedCircleLayer.strokeColor = self.completedProgressColor.cgColor
-        self.completedCircleLayer.strokeEnd = 1.0
+        self.completedCircleLayer.fillColor = self.completedProgressColor.cgColor
+        self.completedCircleLayer.strokeColor = self.backgroudLineColor.cgColor
+        self.completedCircleLayer.lineWidth = 10.0
         
-        let startAngle = DegreesToRadians(value: 270.0)
-        let endAngle = DegreesToRadians(value: 270.0)
-        let radius = self.bounds.width * 0.35
-        let archCenter = self.center
-        let circlePath = UIBezierPath(arcCenter: archCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        let archCenter = CGPoint(x: 20, y: self.bounds.height/2)
+        let circlePath = UIBezierPath(arcCenter: archCenter, radius: CGFloat(15), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
         self.completedCircleLayer.path = circlePath.cgPath
         self.layer.addSublayer(self.completedCircleLayer)
+        
+        //grey circle
+//        let greyCircle = CAShapeLayer()
+//        greyCircle.frame = CGRect(origin: CGPoint(x: 0.0, y:2.0), size: CGSize(width: 4.0, height: 4.0))
+//        greyCircle.fillColor = UIColor.gray.cgColor
+//        greyCircle.strokeColor = UIColor.gray.cgColor
+//        greyCircle.lineWidth = 3.0
+//
+//        let greayArchCenter = CGPoint(x: 20, y: self.bounds.height/2)
+//        let greycirclePath = UIBezierPath(arcCenter: greayArchCenter, radius: CGFloat(10), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+//        greyCircle.path = greycirclePath.cgPath
+//        self.layer.addSublayer(greyCircle)
+        
         
     }
     

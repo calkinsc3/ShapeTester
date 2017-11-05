@@ -26,7 +26,6 @@
 		9422D86D1FAC76E100DC5C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9422D86F1FAC76E100DC5C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9422D8751FAC77F400DC5C68 /* ClaimProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressView.swift; sourceTree = "<group>"; };
-		944863C21FAF4BCB00A4F197 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +58,6 @@
 		9422D8621FAC76E100DC5C68 /* ShapeTester */ = {
 			isa = PBXGroup;
 			children = (
-				944863C21FAF4BCB00A4F197 /* MyPlayground.playground */,
 				9422D8631FAC76E100DC5C68 /* AppDelegate.swift */,
 				9422D8651FAC76E100DC5C68 /* ViewController.swift */,
 				9422D8671FAC76E100DC5C68 /* Main.storyboard */,
