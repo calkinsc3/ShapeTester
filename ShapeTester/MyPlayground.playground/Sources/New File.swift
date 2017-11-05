@@ -1,3 +1,5 @@
+import Foundation
+
 //
 //  AFIClaimProgress.swift
 //  ShapeTester
@@ -50,7 +52,7 @@ class AFIClaimProgress: UIView {
         let backgrounLinePath = UIBezierPath(rect: CGRect(x: 0.0, y: self.bounds.height/2, width: self.bounds.width, height: 20.0))
         self.backgroundLineLayer.path = backgrounLinePath.cgPath
         self.layer.addSublayer(self.backgroundLineLayer)
-
+        
         //progress line
         self.progressLineLayer.frame = self.bounds
         self.progressLineLayer.fillColor = self.progressLineColor.cgColor
@@ -79,7 +81,7 @@ class AFIClaimProgress: UIView {
     fileprivate func configureProgressView() {
         
     }
-
+    
 }
 
 

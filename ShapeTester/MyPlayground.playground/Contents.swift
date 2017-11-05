@@ -1,14 +1,31 @@
-//
-//  AFIClaimProgress.swift
-//  ShapeTester
-//
-//  Created by Calkins, Bill on 11/3/17.
-//  Copyright © 2017 Calkins Computer Consulting. All rights reserved.
-//
-
+//: A UIKit based Playground for presenting user interface
+  
 import UIKit
+import PlaygroundSupport
 
-@IBDesignable
+class MyViewController : UIViewController {
+    override func loadView() {
+        let view = UIView()
+        view.backgroundColor = .white
+
+        let label = UILabel()
+        label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
+        label.text = "Hello World!"
+        label.textColor = .black
+        
+        view.addSubview(label)
+        
+        //add progress view
+        let afiProgressView  = AFIClaimProgress()
+        
+        
+        
+        self.view = view
+    }
+}
+// Present the view controller in the Live View window
+PlaygroundPage.current.liveView = MyViewController()
+
 class AFIClaimProgress: UIView {
     
     let progressLineLayer = CAShapeLayer()
@@ -50,7 +67,7 @@ class AFIClaimProgress: UIView {
         let backgrounLinePath = UIBezierPath(rect: CGRect(x: 0.0, y: self.bounds.height/2, width: self.bounds.width, height: 20.0))
         self.backgroundLineLayer.path = backgrounLinePath.cgPath
         self.layer.addSublayer(self.backgroundLineLayer)
-
+        
         //progress line
         self.progressLineLayer.frame = self.bounds
         self.progressLineLayer.fillColor = self.progressLineColor.cgColor
@@ -79,7 +96,7 @@ class AFIClaimProgress: UIView {
     fileprivate func configureProgressView() {
         
     }
-
+    
 }
 
 
@@ -92,3 +109,5 @@ func DegreesToRadians (value:CGFloat) -> CGFloat {
 func RadiansToDegrees (value:CGFloat) -> CGFloat {
     return value * 180.0 / π
 }
+
+

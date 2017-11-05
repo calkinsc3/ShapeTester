@@ -65,8 +65,30 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gA9-Xf-mEn" id="aNm-u9-wd2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-y3-iqj" customClass="AFIClaimProgress" customModule="ShapeTester" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="359" height="103.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="progressLineColor">
+                                                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroudLineColor">
+                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="completedProgressColor">
+                                                            <color key="value" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xJM-y3-iqj" firstAttribute="leading" secondItem="aNm-u9-wd2" secondAttribute="leading" constant="8" id="HSW-KM-FTX"/>
+                                                <constraint firstItem="xJM-y3-iqj" firstAttribute="top" secondItem="aNm-u9-wd2" secondAttribute="top" constant="8" id="f68-K2-d1U"/>
+                                                <constraint firstAttribute="trailing" secondItem="xJM-y3-iqj" secondAttribute="trailing" constant="8" id="gOX-VQ-8qZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="xJM-y3-iqj" secondAttribute="bottom" constant="8" id="oVg-Wz-a41"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
