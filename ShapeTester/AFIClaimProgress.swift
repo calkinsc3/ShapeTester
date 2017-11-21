@@ -15,6 +15,9 @@ class AFIClaimProgress: UIView {
     let backgroundLineLayer = CAShapeLayer()
     let submittedCircleLayer = CAShapeLayer()
     
+    var circleShapes: [CAShapeLayer] = []
+    var circleShapeTest: [String]  = []
+    
     @IBInspectable var progressLineColor: UIColor = UIColor.blue {
         didSet {
             //self.progressLineLayer.strokeColor = self.progressLineColor.cgColor
@@ -35,12 +38,15 @@ class AFIClaimProgress: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.circleShapeTest = ["Submit", "Evaluate", "Resolve", "Close"]
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         self.setupProgressView()
     }
+    
     
     fileprivate func setupProgressView() {
         
@@ -59,6 +65,16 @@ class AFIClaimProgress: UIView {
         let linePath = UIBezierPath(rect: CGRect(x: 0.0, y: self.backgroundLineLayer.bounds.height/2, width: self.bounds.width/2, height: 10.0))
         self.progressLineLayer.path = linePath.cgPath
         self.layer.addSublayer(self.progressLineLayer)
+        
+        //divide the progress line by 4
+        //subtract quarter by whole / 2
+        
+        for circleText in self.circleShapeTest {
+
+            let circle = self.createProgressCirlce(archCenterPoint: CGPoint(x: 10.0, y:2.0))
+            self.layer.addSublayer(circle)
+
+        }
         
         //submitted circles
         self.submittedCircleLayer.frame = CGRect(origin: CGPoint(x: 10.0, y:2.0), size: CGSize(width: 4.0, height: 4.0))
@@ -108,6 +124,23 @@ class AFIClaimProgress: UIView {
     }
     
     fileprivate func configureProgressView() {
+        
+    }
+    
+    fileprivate func createProgressCirlce(archCenterPoint: CGPoint) -> CAShapeLayer {
+        
+        let progressCirle = CAShapeLayer()
+        
+        let archCenter = CGPoint(x: 10, y: self.progressLineLayer.bounds.height/2)
+        let circlePath = UIBezierPath(arcCenter: archCenter, radius: CGFloat(15), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        
+        progressCirle.frame = CGRect(origin: CGPoint(x: self.progressLineLayer.bounds.size.width / 2, y: 2.0), size: CGSize(width: 4.0, height: 4.0))
+        progressCirle.fillColor = self.backgroudLineColor.cgColor
+        progressCirle.strokeColor = self.backgroudLineColor.cgColor
+        progressCirle.lineWidth = 10.0
+        progressCirle.path = circlePath.cgPath
+        
+        return progressCirle
         
     }
 
