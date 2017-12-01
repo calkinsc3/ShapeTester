@@ -15,7 +15,6 @@
 		9422D86E1FAC76E100DC5C68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9422D86C1FAC76E100DC5C68 /* LaunchScreen.storyboard */; };
 		9422D8761FAC77F400DC5C68 /* ClaimProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9422D8751FAC77F400DC5C68 /* ClaimProgressView.swift */; };
 		9475ECAE1FD172110070C791 /* ClaimProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECAD1FD172110070C791 /* ClaimProgress.swift */; };
-		9475ECB01FD172EF0070C791 /* StyleKitTesterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECAF1FD172EF0070C791 /* StyleKitTesterController.swift */; };
 		9475ECB21FD173870070C791 /* ClaimProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECB11FD173870070C791 /* ClaimProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		9422D86F1FAC76E100DC5C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9422D8751FAC77F400DC5C68 /* ClaimProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressView.swift; sourceTree = "<group>"; };
 		9475ECAD1FD172110070C791 /* ClaimProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimProgress.swift; sourceTree = "<group>"; };
-		9475ECAF1FD172EF0070C791 /* StyleKitTesterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKitTesterController.swift; sourceTree = "<group>"; };
 		9475ECB11FD173870070C791 /* ClaimProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2773E6351FD1D6F00021C109 /* NewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				9475ECAD1FD172110070C791 /* ClaimProgress.swift */,
+				9475ECB11FD173870070C791 /* ClaimProgressBarView.swift */,
+			);
+			path = NewProgress;
+			sourceTree = "<group>";
+		};
+		2773E6361FD1D7140021C109 /* OldProgress */ = {
+			isa = PBXGroup;
+			children = (
+				9422D8751FAC77F400DC5C68 /* ClaimProgressView.swift */,
+				27E8F31C1FAD01FA00E3198E /* AFIClaimProgress.swift */,
+			);
+			path = OldProgress;
+			sourceTree = "<group>";
+		};
 		9422D8571FAC76E100DC5C68 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +80,14 @@
 		9422D8621FAC76E100DC5C68 /* ShapeTester */ = {
 			isa = PBXGroup;
 			children = (
-				9475ECAD1FD172110070C791 /* ClaimProgress.swift */,
+				2773E6351FD1D6F00021C109 /* NewProgress */,
+				2773E6361FD1D7140021C109 /* OldProgress */,
 				9422D8631FAC76E100DC5C68 /* AppDelegate.swift */,
 				9422D8651FAC76E100DC5C68 /* ViewController.swift */,
 				9422D8671FAC76E100DC5C68 /* Main.storyboard */,
 				9422D86A1FAC76E100DC5C68 /* Assets.xcassets */,
 				9422D86C1FAC76E100DC5C68 /* LaunchScreen.storyboard */,
 				9422D86F1FAC76E100DC5C68 /* Info.plist */,
-				9422D8751FAC77F400DC5C68 /* ClaimProgressView.swift */,
-				27E8F31C1FAD01FA00E3198E /* AFIClaimProgress.swift */,
-				9475ECAF1FD172EF0070C791 /* StyleKitTesterController.swift */,
-				9475ECB11FD173870070C791 /* ClaimProgressBarView.swift */,
 			);
 			path = ShapeTester;
 			sourceTree = "<group>";
@@ -152,7 +165,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E8F31D1FAD01FA00E3198E /* AFIClaimProgress.swift in Sources */,
-				9475ECB01FD172EF0070C791 /* StyleKitTesterController.swift in Sources */,
 				9475ECAE1FD172110070C791 /* ClaimProgress.swift in Sources */,
 				9422D8661FAC76E100DC5C68 /* ViewController.swift in Sources */,
 				9475ECB21FD173870070C791 /* ClaimProgressBarView.swift in Sources */,
