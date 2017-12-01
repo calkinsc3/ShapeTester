@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2789F86D1FD1E7CA00D6AB93 /* LineAnimation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LineAnimation.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27E8F31C1FAD01FA00E3198E /* AFIClaimProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFIClaimProgress.swift; sourceTree = "<group>"; };
 		9422D8601FAC76E100DC5C68 /* ShapeTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShapeTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9422D8631FAC76E100DC5C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		9422D8621FAC76E100DC5C68 /* ShapeTester */ = {
 			isa = PBXGroup;
 			children = (
+				2789F86D1FD1E7CA00D6AB93 /* LineAnimation.playground */,
 				2773E6351FD1D6F00021C109 /* NewProgress */,
 				2773E6361FD1D7140021C109 /* OldProgress */,
 				9422D8631FAC76E100DC5C68 /* AppDelegate.swift */,

@@ -87,13 +87,25 @@ public class ClaimProgressBar : NSObject {
         blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
         blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
         blueProgressBarPath.close()
-        blueProgressColor.setFill()
-        blueProgressBarPath.fill()
-
-        blueCompleteColor.setStroke()
-        blueProgressBarPath.lineWidth = 0
-        blueProgressBarPath.lineCapStyle = .round
-        blueProgressBarPath.stroke()
+        
+        //blueProgressColor.setFill()
+        //blueProgressBarPath.fill()
+        
+        
+        //create shape for path
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.fillColor = blueProgressColor.cgColor
+        shapeLayer.strokeColor = blueCompleteColor.cgColor
+        shapeLayer.lineWidth = 4
+        shapeLayer.path = blueProgressBarPath.cgPath
+        
+        //animate the line with stroke end
+        cgLayerToAnimate.addSublayer(shapeLayer)
+        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        lineAnimation.fromValue = 0
+        lineAnimation.toValue = 1
+        lineAnimation.duration = 8
+        shapeLayer.add(lineAnimation, forKey: "strokeEnd")
         
 //        let progressAnimation = CABasicAnimation(keyPath: "strokeEnd")
 //        progressAnimation.fromValue = 0.0
