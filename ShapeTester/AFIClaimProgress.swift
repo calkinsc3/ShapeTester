@@ -62,6 +62,7 @@ class AFIClaimProgress: UIView {
         self.progressLineLayer.fillColor = self.progressLineColor.cgColor
         self.progressLineLayer.strokeStart = 0.0
         self.progressLineLayer.strokeEnd = 0.5
+        
         let linePath = UIBezierPath(rect: CGRect(x: 0.0, y: self.backgroundLineLayer.bounds.height/2, width: self.bounds.width/2, height: 10.0))
         self.progressLineLayer.path = linePath.cgPath
         self.layer.addSublayer(self.progressLineLayer)

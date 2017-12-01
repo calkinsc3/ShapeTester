@@ -11,11 +11,14 @@
 
 import UIKit
 
-public class ClaimProgress : NSObject {
+public class ClaimProgressBar : NSObject {
     
     //// Drawing Methods
     
-    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 340, height: 120), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 120),
+                                                         resizing: ResizingBehavior = .aspectFit,
+                                                         cgLayerToAnimate: CALayer,
+                                                         claimProgress: String) {
         
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
@@ -84,14 +87,20 @@ public class ClaimProgress : NSObject {
         blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
         blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
         blueProgressBarPath.close()
-        
         blueProgressColor.setFill()
         blueProgressBarPath.fill()
+
         blueCompleteColor.setStroke()
         blueProgressBarPath.lineWidth = 0
         blueProgressBarPath.lineCapStyle = .round
         blueProgressBarPath.stroke()
         
+//        let progressAnimation = CABasicAnimation(keyPath: "strokeEnd")
+//        progressAnimation.fromValue = 0.0
+//        progressAnimation.toValue = 0.5
+//        progressAnimation.duration = 1.0
+//        cgLayerToAnimate.removeAnimation(forKey: "strokeEnd")
+//        cgLayerToAnimate.add(progressAnimation, forKey: nil)
         
         //// greenCheckDone
         //// Group
@@ -133,8 +142,6 @@ public class ClaimProgress : NSObject {
         bezier2Path.close()
         checkMarkWhite.setFill()
         bezier2Path.fill()
-        
-        
         
         
         //// submitGreenCircle

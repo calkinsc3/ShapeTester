@@ -295,7 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GAW47D4MAE;
+				DEVELOPMENT_TEAM = Z8HWHC6CY7;
 				INFOPLIST_FILE = ShapeTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.c3.ShapeTester;
@@ -310,7 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GAW47D4MAE;
+				DEVELOPMENT_TEAM = Z8HWHC6CY7;
 				INFOPLIST_FILE = ShapeTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.c3.ShapeTester;
