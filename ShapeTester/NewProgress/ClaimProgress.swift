@@ -103,7 +103,7 @@ public class ClaimProgressBar : NSObject {
         cgLayerToAnimate.addSublayer(shapeLayer)
         let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineAnimation.fromValue = 0
-        lineAnimation.toValue = 1
+        lineAnimation.toValue = 0.25
         lineAnimation.duration = 8
         shapeLayer.add(lineAnimation, forKey: "strokeEnd")
         
