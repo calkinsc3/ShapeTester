@@ -19,7 +19,8 @@
 		9475ECBE1FD2BE990070C791 /* ClaimProgressEvaluate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECBB1FD2BE990070C791 /* ClaimProgressEvaluate.swift */; };
 		9475ECBF1FD2BE990070C791 /* ClaimProgressClose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECBC1FD2BE990070C791 /* ClaimProgressClose.swift */; };
 		9475ECC01FD2BE990070C791 /* ClaimProgressResolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECBD1FD2BE990070C791 /* ClaimProgressResolve.swift */; };
-		9475ECCA1FD2C12A0070C791 /* ClaimProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECC91FD2C12A0070C791 /* ClaimProgressView.swift */; };
+		9475ECCA1FD2C12A0070C791 /* ClaimProgressViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECC91FD2C12A0070C791 /* ClaimProgressViews.swift */; };
+		9475ECCC1FD2C4E00070C791 /* ClaimProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECCB1FD2C4E00070C791 /* ClaimProgressViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,8 @@
 		9475ECBB1FD2BE990070C791 /* ClaimProgressEvaluate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimProgressEvaluate.swift; sourceTree = "<group>"; };
 		9475ECBC1FD2BE990070C791 /* ClaimProgressClose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimProgressClose.swift; sourceTree = "<group>"; };
 		9475ECBD1FD2BE990070C791 /* ClaimProgressResolve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimProgressResolve.swift; sourceTree = "<group>"; };
-		9475ECC91FD2C12A0070C791 /* ClaimProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressView.swift; sourceTree = "<group>"; };
+		9475ECC91FD2C12A0070C791 /* ClaimProgressViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressViews.swift; sourceTree = "<group>"; };
+		9475ECCB1FD2C4E00070C791 /* ClaimProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,8 @@
 				9475ECBC1FD2BE990070C791 /* ClaimProgressClose.swift */,
 				9475ECBB1FD2BE990070C791 /* ClaimProgressEvaluate.swift */,
 				9475ECBD1FD2BE990070C791 /* ClaimProgressResolve.swift */,
-				9475ECC91FD2C12A0070C791 /* ClaimProgressView.swift */,
+				9475ECC91FD2C12A0070C791 /* ClaimProgressViews.swift */,
+				9475ECCB1FD2C4E00070C791 /* ClaimProgressViewController.swift */,
 			);
 			path = FinalProgress;
 			sourceTree = "<group>";
@@ -192,12 +195,13 @@
 				9475ECAE1FD172110070C791 /* ClaimProgress.swift in Sources */,
 				9422D8661FAC76E100DC5C68 /* ViewController.swift in Sources */,
 				9475ECBE1FD2BE990070C791 /* ClaimProgressEvaluate.swift in Sources */,
+				9475ECCC1FD2C4E00070C791 /* ClaimProgressViewController.swift in Sources */,
 				9475ECBF1FD2BE990070C791 /* ClaimProgressClose.swift in Sources */,
 				9475ECB21FD173870070C791 /* ClaimProgressBarView.swift in Sources */,
 				9422D8641FAC76E100DC5C68 /* AppDelegate.swift in Sources */,
 				9422D8761FAC77F400DC5C68 /* ClaimProgressViewOld.swift in Sources */,
 				9475ECC01FD2BE990070C791 /* ClaimProgressResolve.swift in Sources */,
-				9475ECCA1FD2C12A0070C791 /* ClaimProgressView.swift in Sources */,
+				9475ECCA1FD2C12A0070C791 /* ClaimProgressViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

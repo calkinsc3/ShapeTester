@@ -136,7 +136,7 @@
         <!--ProgressViewTester-->
         <scene sceneID="XKi-6e-DJL">
             <objects>
-                <viewController title="ProgressViewTester" id="em9-xO-oG4" customClass="ClaimProgressBarTestController" customModule="ShapeTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ProgressViewTester" id="em9-xO-oG4" customClass="ClaimProgressViewController" customModule="ShapeTester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GYP-RC-IYl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -14,7 +14,7 @@ class ClaimProgressEvaluateView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        ClaimProgressEvaluate.drawClaimProgressBar()
+        ClaimProgressEvaluate.drawClaimProgressBar(frame: rect, resizing: .aspectFit, isHidden: true)
     }
     
 }
@@ -25,7 +25,7 @@ class ClaimProgressResolveView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        ClaimProgressResolve.drawClaimProgressBar()
+        ClaimProgressResolve.drawClaimProgressBar(frame: rect, resizing: .aspectFit, isHidden: true)
     }
     
 }
@@ -36,7 +36,7 @@ class ClaimProgressCloseView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        ClaimProgressClose.drawClaimProgressBar()
+        ClaimProgressClose.drawClaimProgressBar(frame: rect, resizing: .aspectFit, isHidden2: true)
     }
     
 }
