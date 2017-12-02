@@ -71,20 +71,49 @@ public class ClaimProgressResolve : NSObject {
         greyCircleClosePath.fill()
         
         
+        //// submitCheckMark
+        //// Group 3
+        //// Bezier 7 Drawing
+        let greenCirclePath = UIBezierPath()
+        greenCirclePath.move(to: CGPoint(x: 45, y: 45))
+        greenCirclePath.addCurve(to: CGPoint(x: 48.9, y: 45.78), controlPoint1: CGPoint(x: 46.38, y: 45), controlPoint2: CGPoint(x: 47.68, y: 45.26))
+        greenCirclePath.addCurve(to: CGPoint(x: 52.08, y: 47.92), controlPoint1: CGPoint(x: 50.12, y: 46.31), controlPoint2: CGPoint(x: 51.18, y: 47.02))
+        greenCirclePath.addCurve(to: CGPoint(x: 54.22, y: 51.1), controlPoint1: CGPoint(x: 52.98, y: 48.82), controlPoint2: CGPoint(x: 53.69, y: 49.88))
+        greenCirclePath.addCurve(to: CGPoint(x: 55, y: 55), controlPoint1: CGPoint(x: 54.74, y: 52.32), controlPoint2: CGPoint(x: 55, y: 53.62))
+        greenCirclePath.addCurve(to: CGPoint(x: 54.22, y: 58.9), controlPoint1: CGPoint(x: 55, y: 56.38), controlPoint2: CGPoint(x: 54.74, y: 57.68))
+        greenCirclePath.addCurve(to: CGPoint(x: 52.08, y: 62.08), controlPoint1: CGPoint(x: 53.69, y: 60.12), controlPoint2: CGPoint(x: 52.98, y: 61.18))
+        greenCirclePath.addCurve(to: CGPoint(x: 48.9, y: 64.22), controlPoint1: CGPoint(x: 51.18, y: 62.98), controlPoint2: CGPoint(x: 50.12, y: 63.69))
+        greenCirclePath.addCurve(to: CGPoint(x: 45, y: 65), controlPoint1: CGPoint(x: 47.68, y: 64.74), controlPoint2: CGPoint(x: 46.38, y: 65))
+        greenCirclePath.addCurve(to: CGPoint(x: 41.1, y: 64.22), controlPoint1: CGPoint(x: 43.62, y: 65), controlPoint2: CGPoint(x: 42.32, y: 64.74))
+        greenCirclePath.addCurve(to: CGPoint(x: 37.92, y: 62.08), controlPoint1: CGPoint(x: 39.88, y: 63.69), controlPoint2: CGPoint(x: 38.82, y: 62.98))
+        greenCirclePath.addCurve(to: CGPoint(x: 35.78, y: 58.9), controlPoint1: CGPoint(x: 37.02, y: 61.18), controlPoint2: CGPoint(x: 36.31, y: 60.12))
+        greenCirclePath.addCurve(to: CGPoint(x: 35, y: 55), controlPoint1: CGPoint(x: 35.26, y: 57.68), controlPoint2: CGPoint(x: 35, y: 56.38))
+        greenCirclePath.addCurve(to: CGPoint(x: 35.78, y: 51.1), controlPoint1: CGPoint(x: 35, y: 53.62), controlPoint2: CGPoint(x: 35.26, y: 52.32))
+        greenCirclePath.addCurve(to: CGPoint(x: 37.92, y: 47.92), controlPoint1: CGPoint(x: 36.31, y: 49.88), controlPoint2: CGPoint(x: 37.02, y: 48.82))
+        greenCirclePath.addCurve(to: CGPoint(x: 41.1, y: 45.78), controlPoint1: CGPoint(x: 38.82, y: 47.02), controlPoint2: CGPoint(x: 39.88, y: 46.31))
+        greenCirclePath.addCurve(to: CGPoint(x: 45, y: 45), controlPoint1: CGPoint(x: 42.32, y: 45.26), controlPoint2: CGPoint(x: 43.62, y: 45))
+        greenCirclePath.close()
+        checkMarkColor.setFill()
+        greenCirclePath.fill()
+        
+        
+        //// Bezier 8 Drawing
+        let whiteCheckMarkPath = UIBezierPath()
+        whiteCheckMarkPath.move(to: CGPoint(x: 50.33, y: 50))
+        whiteCheckMarkPath.addLine(to: CGPoint(x: 51.93, y: 51.61))
+        whiteCheckMarkPath.addLine(to: CGPoint(x: 43.14, y: 60.54))
+        whiteCheckMarkPath.addLine(to: CGPoint(x: 38, y: 54.92))
+        whiteCheckMarkPath.addLine(to: CGPoint(x: 39.66, y: 53.35))
+        whiteCheckMarkPath.addLine(to: CGPoint(x: 43.2, y: 57.22))
+        whiteCheckMarkPath.addLine(to: CGPoint(x: 50.33, y: 50))
+        whiteCheckMarkPath.close()
+        checkMarkWhite.setFill()
+        whiteCheckMarkPath.fill()
+        
         //// blueProgressBar Drawing
         let blueProgressBarPath = UIBezierPath()
         blueProgressBarPath.move(to: CGPoint(x: 49, y: 70))
-        blueProgressBarPath.addLine(to: CGPoint(x: 130, y: 70))
-        //        blueProgressBarPath.addLine(to: CGPoint(x: 251, y: 53))
-        //        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
-        //        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
-        //        blueProgressBarPath.close()
-        //        blueProgressColor.setFill()
-        //        blueProgressBarPath.fill()
-        //        blueCompleteColor.setStroke()
-        //        blueProgressBarPath.lineWidth = 0
-        //        blueProgressBarPath.lineCapStyle = .round
-        //        blueProgressBarPath.stroke()
+        blueProgressBarPath.addLine(to: CGPoint(x: 230, y: 70))
         
         //create shape for path
         let lineAnimationShapeLayer = CAShapeLayer()
@@ -100,46 +129,6 @@ public class ClaimProgressResolve : NSObject {
         lineAnimation.repeatCount = 4
         lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
         cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
-        
-        
-        //// submitCheckMark
-        //// Group 3
-        //// Bezier 7 Drawing
-        let bezier7Path = UIBezierPath()
-        bezier7Path.move(to: CGPoint(x: 45, y: 45))
-        bezier7Path.addCurve(to: CGPoint(x: 48.9, y: 45.78), controlPoint1: CGPoint(x: 46.38, y: 45), controlPoint2: CGPoint(x: 47.68, y: 45.26))
-        bezier7Path.addCurve(to: CGPoint(x: 52.08, y: 47.92), controlPoint1: CGPoint(x: 50.12, y: 46.31), controlPoint2: CGPoint(x: 51.18, y: 47.02))
-        bezier7Path.addCurve(to: CGPoint(x: 54.22, y: 51.1), controlPoint1: CGPoint(x: 52.98, y: 48.82), controlPoint2: CGPoint(x: 53.69, y: 49.88))
-        bezier7Path.addCurve(to: CGPoint(x: 55, y: 55), controlPoint1: CGPoint(x: 54.74, y: 52.32), controlPoint2: CGPoint(x: 55, y: 53.62))
-        bezier7Path.addCurve(to: CGPoint(x: 54.22, y: 58.9), controlPoint1: CGPoint(x: 55, y: 56.38), controlPoint2: CGPoint(x: 54.74, y: 57.68))
-        bezier7Path.addCurve(to: CGPoint(x: 52.08, y: 62.08), controlPoint1: CGPoint(x: 53.69, y: 60.12), controlPoint2: CGPoint(x: 52.98, y: 61.18))
-        bezier7Path.addCurve(to: CGPoint(x: 48.9, y: 64.22), controlPoint1: CGPoint(x: 51.18, y: 62.98), controlPoint2: CGPoint(x: 50.12, y: 63.69))
-        bezier7Path.addCurve(to: CGPoint(x: 45, y: 65), controlPoint1: CGPoint(x: 47.68, y: 64.74), controlPoint2: CGPoint(x: 46.38, y: 65))
-        bezier7Path.addCurve(to: CGPoint(x: 41.1, y: 64.22), controlPoint1: CGPoint(x: 43.62, y: 65), controlPoint2: CGPoint(x: 42.32, y: 64.74))
-        bezier7Path.addCurve(to: CGPoint(x: 37.92, y: 62.08), controlPoint1: CGPoint(x: 39.88, y: 63.69), controlPoint2: CGPoint(x: 38.82, y: 62.98))
-        bezier7Path.addCurve(to: CGPoint(x: 35.78, y: 58.9), controlPoint1: CGPoint(x: 37.02, y: 61.18), controlPoint2: CGPoint(x: 36.31, y: 60.12))
-        bezier7Path.addCurve(to: CGPoint(x: 35, y: 55), controlPoint1: CGPoint(x: 35.26, y: 57.68), controlPoint2: CGPoint(x: 35, y: 56.38))
-        bezier7Path.addCurve(to: CGPoint(x: 35.78, y: 51.1), controlPoint1: CGPoint(x: 35, y: 53.62), controlPoint2: CGPoint(x: 35.26, y: 52.32))
-        bezier7Path.addCurve(to: CGPoint(x: 37.92, y: 47.92), controlPoint1: CGPoint(x: 36.31, y: 49.88), controlPoint2: CGPoint(x: 37.02, y: 48.82))
-        bezier7Path.addCurve(to: CGPoint(x: 41.1, y: 45.78), controlPoint1: CGPoint(x: 38.82, y: 47.02), controlPoint2: CGPoint(x: 39.88, y: 46.31))
-        bezier7Path.addCurve(to: CGPoint(x: 45, y: 45), controlPoint1: CGPoint(x: 42.32, y: 45.26), controlPoint2: CGPoint(x: 43.62, y: 45))
-        bezier7Path.close()
-        checkMarkColor.setFill()
-        bezier7Path.fill()
-        
-        
-        //// Bezier 8 Drawing
-        let bezier8Path = UIBezierPath()
-        bezier8Path.move(to: CGPoint(x: 50.33, y: 50))
-        bezier8Path.addLine(to: CGPoint(x: 51.93, y: 51.61))
-        bezier8Path.addLine(to: CGPoint(x: 43.14, y: 60.54))
-        bezier8Path.addLine(to: CGPoint(x: 38, y: 54.92))
-        bezier8Path.addLine(to: CGPoint(x: 39.66, y: 53.35))
-        bezier8Path.addLine(to: CGPoint(x: 43.2, y: 57.22))
-        bezier8Path.addLine(to: CGPoint(x: 50.33, y: 50))
-        bezier8Path.close()
-        checkMarkWhite.setFill()
-        bezier8Path.fill()
         
         
         //// submitText Drawing
