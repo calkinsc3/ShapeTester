@@ -91,8 +91,8 @@ public class ClaimProgressEvaluate : NSObject {
 //
 //        //create shape for path
         let lineAnimationShapeLayer = CAShapeLayer()
-        lineAnimationShapeLayer.fillColor = blueCompleteColor.cgColor
-        lineAnimationShapeLayer.strokeColor = blueCompleteColor.cgColor
+        lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
+        lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
         lineAnimationShapeLayer.lineWidth = 4
         lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
 
