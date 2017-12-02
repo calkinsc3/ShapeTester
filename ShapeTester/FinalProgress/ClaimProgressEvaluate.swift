@@ -100,35 +100,34 @@ public class ClaimProgressEvaluate : NSObject {
         let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineAnimation.fromValue = 0
         lineAnimation.duration = 2
-//        lineAnimation.repeatCount = 4
+        lineAnimation.repeatCount = 4
         lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
         cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
 
 
         //// submitCheckMark
         //// Group 3
-        //// Bezier 7 Drawing
-        let bezier7Path = UIBezierPath()
-        bezier7Path.move(to: CGPoint(x: 45, y: 45))
-        bezier7Path.addCurve(to: CGPoint(x: 48.9, y: 45.78), controlPoint1: CGPoint(x: 46.38, y: 45), controlPoint2: CGPoint(x: 47.68, y: 45.26))
-        bezier7Path.addCurve(to: CGPoint(x: 52.08, y: 47.92), controlPoint1: CGPoint(x: 50.12, y: 46.31), controlPoint2: CGPoint(x: 51.18, y: 47.02))
-        bezier7Path.addCurve(to: CGPoint(x: 54.22, y: 51.1), controlPoint1: CGPoint(x: 52.98, y: 48.82), controlPoint2: CGPoint(x: 53.69, y: 49.88))
-        bezier7Path.addCurve(to: CGPoint(x: 55, y: 55), controlPoint1: CGPoint(x: 54.74, y: 52.32), controlPoint2: CGPoint(x: 55, y: 53.62))
-        bezier7Path.addCurve(to: CGPoint(x: 54.22, y: 58.9), controlPoint1: CGPoint(x: 55, y: 56.38), controlPoint2: CGPoint(x: 54.74, y: 57.68))
-        bezier7Path.addCurve(to: CGPoint(x: 52.08, y: 62.08), controlPoint1: CGPoint(x: 53.69, y: 60.12), controlPoint2: CGPoint(x: 52.98, y: 61.18))
-        bezier7Path.addCurve(to: CGPoint(x: 48.9, y: 64.22), controlPoint1: CGPoint(x: 51.18, y: 62.98), controlPoint2: CGPoint(x: 50.12, y: 63.69))
-        bezier7Path.addCurve(to: CGPoint(x: 45, y: 65), controlPoint1: CGPoint(x: 47.68, y: 64.74), controlPoint2: CGPoint(x: 46.38, y: 65))
-        bezier7Path.addCurve(to: CGPoint(x: 41.1, y: 64.22), controlPoint1: CGPoint(x: 43.62, y: 65), controlPoint2: CGPoint(x: 42.32, y: 64.74))
-        bezier7Path.addCurve(to: CGPoint(x: 37.92, y: 62.08), controlPoint1: CGPoint(x: 39.88, y: 63.69), controlPoint2: CGPoint(x: 38.82, y: 62.98))
-        bezier7Path.addCurve(to: CGPoint(x: 35.78, y: 58.9), controlPoint1: CGPoint(x: 37.02, y: 61.18), controlPoint2: CGPoint(x: 36.31, y: 60.12))
-        bezier7Path.addCurve(to: CGPoint(x: 35, y: 55), controlPoint1: CGPoint(x: 35.26, y: 57.68), controlPoint2: CGPoint(x: 35, y: 56.38))
-        bezier7Path.addCurve(to: CGPoint(x: 35.78, y: 51.1), controlPoint1: CGPoint(x: 35, y: 53.62), controlPoint2: CGPoint(x: 35.26, y: 52.32))
-        bezier7Path.addCurve(to: CGPoint(x: 37.92, y: 47.92), controlPoint1: CGPoint(x: 36.31, y: 49.88), controlPoint2: CGPoint(x: 37.02, y: 48.82))
-        bezier7Path.addCurve(to: CGPoint(x: 41.1, y: 45.78), controlPoint1: CGPoint(x: 38.82, y: 47.02), controlPoint2: CGPoint(x: 39.88, y: 46.31))
-        bezier7Path.addCurve(to: CGPoint(x: 45, y: 45), controlPoint1: CGPoint(x: 42.32, y: 45.26), controlPoint2: CGPoint(x: 43.62, y: 45))
-        bezier7Path.close()
+        let submitCheckPath = UIBezierPath()
+        submitCheckPath.move(to: CGPoint(x: 45, y: 45))
+        submitCheckPath.addCurve(to: CGPoint(x: 48.9, y: 45.78), controlPoint1: CGPoint(x: 46.38, y: 45), controlPoint2: CGPoint(x: 47.68, y: 45.26))
+        submitCheckPath.addCurve(to: CGPoint(x: 52.08, y: 47.92), controlPoint1: CGPoint(x: 50.12, y: 46.31), controlPoint2: CGPoint(x: 51.18, y: 47.02))
+        submitCheckPath.addCurve(to: CGPoint(x: 54.22, y: 51.1), controlPoint1: CGPoint(x: 52.98, y: 48.82), controlPoint2: CGPoint(x: 53.69, y: 49.88))
+        submitCheckPath.addCurve(to: CGPoint(x: 55, y: 55), controlPoint1: CGPoint(x: 54.74, y: 52.32), controlPoint2: CGPoint(x: 55, y: 53.62))
+        submitCheckPath.addCurve(to: CGPoint(x: 54.22, y: 58.9), controlPoint1: CGPoint(x: 55, y: 56.38), controlPoint2: CGPoint(x: 54.74, y: 57.68))
+        submitCheckPath.addCurve(to: CGPoint(x: 52.08, y: 62.08), controlPoint1: CGPoint(x: 53.69, y: 60.12), controlPoint2: CGPoint(x: 52.98, y: 61.18))
+        submitCheckPath.addCurve(to: CGPoint(x: 48.9, y: 64.22), controlPoint1: CGPoint(x: 51.18, y: 62.98), controlPoint2: CGPoint(x: 50.12, y: 63.69))
+        submitCheckPath.addCurve(to: CGPoint(x: 45, y: 65), controlPoint1: CGPoint(x: 47.68, y: 64.74), controlPoint2: CGPoint(x: 46.38, y: 65))
+        submitCheckPath.addCurve(to: CGPoint(x: 41.1, y: 64.22), controlPoint1: CGPoint(x: 43.62, y: 65), controlPoint2: CGPoint(x: 42.32, y: 64.74))
+        submitCheckPath.addCurve(to: CGPoint(x: 37.92, y: 62.08), controlPoint1: CGPoint(x: 39.88, y: 63.69), controlPoint2: CGPoint(x: 38.82, y: 62.98))
+        submitCheckPath.addCurve(to: CGPoint(x: 35.78, y: 58.9), controlPoint1: CGPoint(x: 37.02, y: 61.18), controlPoint2: CGPoint(x: 36.31, y: 60.12))
+        submitCheckPath.addCurve(to: CGPoint(x: 35, y: 55), controlPoint1: CGPoint(x: 35.26, y: 57.68), controlPoint2: CGPoint(x: 35, y: 56.38))
+        submitCheckPath.addCurve(to: CGPoint(x: 35.78, y: 51.1), controlPoint1: CGPoint(x: 35, y: 53.62), controlPoint2: CGPoint(x: 35.26, y: 52.32))
+        submitCheckPath.addCurve(to: CGPoint(x: 37.92, y: 47.92), controlPoint1: CGPoint(x: 36.31, y: 49.88), controlPoint2: CGPoint(x: 37.02, y: 48.82))
+        submitCheckPath.addCurve(to: CGPoint(x: 41.1, y: 45.78), controlPoint1: CGPoint(x: 38.82, y: 47.02), controlPoint2: CGPoint(x: 39.88, y: 46.31))
+        submitCheckPath.addCurve(to: CGPoint(x: 45, y: 45), controlPoint1: CGPoint(x: 42.32, y: 45.26), controlPoint2: CGPoint(x: 43.62, y: 45))
+        submitCheckPath.close()
         checkMarkColor.setFill()
-        bezier7Path.fill()
+        submitCheckPath.fill()
 
 
 
