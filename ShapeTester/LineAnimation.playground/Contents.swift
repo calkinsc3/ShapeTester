@@ -15,7 +15,6 @@ class MyViewController : UIViewController {
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
-        
         self.view = view
         
         let linePath = UIBezierPath()
@@ -68,14 +67,11 @@ class MyViewController : UIViewController {
         
         let completeYellowCirlePath = UIBezierPath(ovalIn: CGRect(x: 175, y: 175, width: 80, height: 80))
         let circle3 = CAShapeLayer()
-        circle3.fillColor = UIColor.yellow.cgColor
+        circle3.fillColor = blueCompleteColor.cgColor
         circle3.strokeColor = greyProgressBarColor.cgColor
         circle3.lineWidth = 8
         circle3.path = completeYellowCirlePath.cgPath
         self.view.layer.addSublayer(circle3)
-        
-        
-        
         
         
         
@@ -91,7 +87,7 @@ class MyViewController : UIViewController {
         
         let curveShapeLayter = CAShapeLayer()
         curveShapeLayter.fillColor = UIColor.white.cgColor
-        curveShapeLayter.strokeColor = UIColor.blue.cgColor
+        curveShapeLayter.strokeColor = blueCompleteColor.cgColor
         curveShapeLayter.lineWidth = 5
         curveShapeLayter.path = path.cgPath
         curveShapeLayter.strokeStart = 0.8

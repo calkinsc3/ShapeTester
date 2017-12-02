@@ -10,7 +10,7 @@
 import UIKit
 
 @IBDesignable
-class ClaimProgressView: UIView {
+class ClaimProgressViewOld: UIView {
 
     let submission = UILabel()
     let evaluation = UILabel()

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GqJ-9D-MNP">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="em9-xO-oG4">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,11 @@
             <objects>
                 <viewController title="View Test" id="BYZ-38-t0r" customClass="ViewController" customModule="ShapeTester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpN-Yi-Pnv" customClass="ClaimProgressView" customModule="ShapeTester" customModuleProvider="target">
-                                <rect key="frame" x="10" y="134" width="300" height="300"/>
+                                <rect key="frame" x="57" y="218" width="300" height="300"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -53,21 +54,21 @@
             <objects>
                 <tableViewController title="Table Tester" id="DF5-pk-NhQ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vGi-tb-3Oc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="XHz-AO-zTr">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="gA9-Xf-mEn">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gA9-Xf-mEn" id="aNm-u9-wd2">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-y3-iqj" customClass="AFIClaimProgress" customModule="ShapeTester" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="304" height="103.5"/>
+                                                    <rect key="frame" x="8" y="8" width="398" height="103.66666666666667"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="progressLineColor">
@@ -108,11 +109,11 @@
             <objects>
                 <viewController id="GqJ-9D-MNP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3wD-UJ-9gv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5K-lP-UwD" customClass="ClaimProgressBarView" customModule="ShapeTester" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="320" height="120"/>
+                                <rect key="frame" x="0.0" y="30" width="414" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Fpu-6I-yje"/>
@@ -132,5 +133,55 @@
             </objects>
             <point key="canvasLocation" x="304.80000000000001" y="1476.6116941529237"/>
         </scene>
+        <!--ProgressViewTester-->
+        <scene sceneID="XKi-6e-DJL">
+            <objects>
+                <viewController title="ProgressViewTester" id="em9-xO-oG4" customClass="ClaimProgressBarTestController" customModule="ShapeTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GYP-RC-IYl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-Q2-ZW9" customClass="ClaimProgressEvaluateView" customModule="ShapeTester" customModuleProvider="target">
+                                <rect key="frame" x="8" y="28" width="398" height="130"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="C1n-Dg-ejz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBR-EX-gqh" customClass="ClaimProgressCloseView" customModule="ShapeTester" customModuleProvider="target">
+                                <rect key="frame" x="8" y="328" width="398" height="130"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="NGf-J6-0Ob"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlw-nW-DkO" customClass="ClaimProgressResolveView" customModule="ShapeTester" customModuleProvider="target">
+                                <rect key="frame" x="8" y="178" width="398" height="130"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="9pn-HY-iH1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zlw-nW-DkO" firstAttribute="top" secondItem="0u5-Q2-ZW9" secondAttribute="bottom" constant="20" id="2p8-su-hlT"/>
+                            <constraint firstItem="6Za-VI-bC4" firstAttribute="trailing" secondItem="aBR-EX-gqh" secondAttribute="trailing" constant="8" id="5Eb-Nn-To0"/>
+                            <constraint firstItem="6Za-VI-bC4" firstAttribute="trailing" secondItem="0u5-Q2-ZW9" secondAttribute="trailing" constant="8" id="PCj-1J-zqm"/>
+                            <constraint firstItem="aBR-EX-gqh" firstAttribute="top" secondItem="Zlw-nW-DkO" secondAttribute="bottom" constant="20" id="SiV-W7-RRi"/>
+                            <constraint firstItem="6Za-VI-bC4" firstAttribute="trailing" secondItem="Zlw-nW-DkO" secondAttribute="trailing" constant="8" id="TC3-KL-FUo"/>
+                            <constraint firstItem="0u5-Q2-ZW9" firstAttribute="leading" secondItem="6Za-VI-bC4" secondAttribute="leading" constant="8" id="X97-fq-EbN"/>
+                            <constraint firstItem="Zlw-nW-DkO" firstAttribute="leading" secondItem="6Za-VI-bC4" secondAttribute="leading" constant="8" id="Xpr-Vg-RJT"/>
+                            <constraint firstItem="aBR-EX-gqh" firstAttribute="leading" secondItem="6Za-VI-bC4" secondAttribute="leading" constant="8" id="cdl-ps-EBZ"/>
+                            <constraint firstItem="0u5-Q2-ZW9" firstAttribute="top" secondItem="GYP-RC-IYl" secondAttribute="topMargin" constant="8" id="tTf-SF-coY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Za-VI-bC4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmA-7P-Pgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1240.5797101449277" y="1472.2826086956522"/>
+        </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
