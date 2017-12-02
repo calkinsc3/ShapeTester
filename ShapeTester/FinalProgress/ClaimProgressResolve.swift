@@ -11,10 +11,12 @@
 import UIKit
 
 public class ClaimProgressResolve : NSObject {
-
+    
     //// Drawing Methods
-
-    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 100), resizing: ResizingBehavior = .aspectFit, isHidden: Bool = true) {
+    
+    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 100),
+                                                         resizing: ResizingBehavior = .aspectFit,
+                                                         cgViewToAnimate: CALayer) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -23,8 +25,8 @@ public class ClaimProgressResolve : NSObject {
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 400, height: 100), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 400, y: resizedFrame.height / 100)
-
-
+        
+        
         //// Color Declarations
         let blueCompleteColor = UIColor(red: 0.098, green: 0.369, blue: 0.690, alpha: 1.000)
         let checkMarkColor = UIColor(red: 0.455, green: 0.620, blue: 0.000, alpha: 1.000)
@@ -32,7 +34,7 @@ public class ClaimProgressResolve : NSObject {
         let blueProgressColor = UIColor(red: 0.098, green: 0.369, blue: 0.655, alpha: 1.000)
         let greyProgressBarColor = UIColor(red: 0.847, green: 0.847, blue: 0.847, alpha: 1.000)
         let darkGreyText = UIColor(red: 0.322, green: 0.322, blue: 0.322, alpha: 1.000)
-
+        
         //// greyOuterProgressBar Drawing
         let greyOuterProgressBarPath = UIBezierPath()
         greyOuterProgressBarPath.move(to: CGPoint(x: 41, y: 62))
@@ -43,48 +45,63 @@ public class ClaimProgressResolve : NSObject {
         greyOuterProgressBarPath.close()
         greyProgressBarColor.setFill()
         greyOuterProgressBarPath.fill()
-
-
+        
+        
         //// submitGreyCircle Drawing
         let submitGreyCirclePath = UIBezierPath(ovalIn: CGRect(x: 29, y: 39, width: 32, height: 32))
         greyProgressBarColor.setFill()
         submitGreyCirclePath.fill()
-
-
+        
+        
         //// evaluateGreyCircle Drawing
         let evaluateGreyCirclePath = UIBezierPath(ovalIn: CGRect(x: 125, y: 39, width: 32, height: 32))
         greyProgressBarColor.setFill()
         evaluateGreyCirclePath.fill()
-
-
+        
+        
         //// resolveGreyCircle Drawing
         let resolveGreyCirclePath = UIBezierPath(ovalIn: CGRect(x: 234, y: 39, width: 32, height: 32))
         greyProgressBarColor.setFill()
         resolveGreyCirclePath.fill()
-
-
+        
+        
         //// greyCircleClose Drawing
         let greyCircleClosePath = UIBezierPath(ovalIn: CGRect(x: 348, y: 39, width: 32, height: 32))
         greyProgressBarColor.setFill()
         greyCircleClosePath.fill()
-
-
+        
+        
         //// blueProgressBar Drawing
         let blueProgressBarPath = UIBezierPath()
-        blueProgressBarPath.move(to: CGPoint(x: 41, y: 57))
-        blueProgressBarPath.addLine(to: CGPoint(x: 251, y: 57))
-        blueProgressBarPath.addLine(to: CGPoint(x: 251, y: 53))
-        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
-        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
-        blueProgressBarPath.close()
-        blueProgressColor.setFill()
-        blueProgressBarPath.fill()
-        blueCompleteColor.setStroke()
-        blueProgressBarPath.lineWidth = 0
-        blueProgressBarPath.lineCapStyle = .round
-        blueProgressBarPath.stroke()
-
-
+        blueProgressBarPath.move(to: CGPoint(x: 49, y: 70))
+        blueProgressBarPath.addLine(to: CGPoint(x: 130, y: 70))
+        //        blueProgressBarPath.addLine(to: CGPoint(x: 251, y: 53))
+        //        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
+        //        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
+        //        blueProgressBarPath.close()
+        //        blueProgressColor.setFill()
+        //        blueProgressBarPath.fill()
+        //        blueCompleteColor.setStroke()
+        //        blueProgressBarPath.lineWidth = 0
+        //        blueProgressBarPath.lineCapStyle = .round
+        //        blueProgressBarPath.stroke()
+        
+        //create shape for path
+        let lineAnimationShapeLayer = CAShapeLayer()
+        lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
+        lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
+        lineAnimationShapeLayer.lineWidth = 4
+        lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
+        
+        //        //animate the line with stroke end
+        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        lineAnimation.fromValue = 0
+        lineAnimation.duration = 2
+        lineAnimation.repeatCount = 4
+        lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
+        cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
+        
+        
         //// submitCheckMark
         //// Group 3
         //// Bezier 7 Drawing
@@ -109,28 +126,22 @@ public class ClaimProgressResolve : NSObject {
         bezier7Path.close()
         checkMarkColor.setFill()
         bezier7Path.fill()
-
-
-
-
-        if (isHidden) {
-            //// Bezier 8 Drawing
-            let bezier8Path = UIBezierPath()
-            bezier8Path.move(to: CGPoint(x: 50.33, y: 50))
-            bezier8Path.addLine(to: CGPoint(x: 51.93, y: 51.61))
-            bezier8Path.addLine(to: CGPoint(x: 43.14, y: 60.54))
-            bezier8Path.addLine(to: CGPoint(x: 38, y: 54.92))
-            bezier8Path.addLine(to: CGPoint(x: 39.66, y: 53.35))
-            bezier8Path.addLine(to: CGPoint(x: 43.2, y: 57.22))
-            bezier8Path.addLine(to: CGPoint(x: 50.33, y: 50))
-            bezier8Path.close()
-            checkMarkWhite.setFill()
-            bezier8Path.fill()
-        }
-
-
-
-
+        
+        
+        //// Bezier 8 Drawing
+        let bezier8Path = UIBezierPath()
+        bezier8Path.move(to: CGPoint(x: 50.33, y: 50))
+        bezier8Path.addLine(to: CGPoint(x: 51.93, y: 51.61))
+        bezier8Path.addLine(to: CGPoint(x: 43.14, y: 60.54))
+        bezier8Path.addLine(to: CGPoint(x: 38, y: 54.92))
+        bezier8Path.addLine(to: CGPoint(x: 39.66, y: 53.35))
+        bezier8Path.addLine(to: CGPoint(x: 43.2, y: 57.22))
+        bezier8Path.addLine(to: CGPoint(x: 50.33, y: 50))
+        bezier8Path.close()
+        checkMarkWhite.setFill()
+        bezier8Path.fill()
+        
+        
         //// submitText Drawing
         let submitTextRect = CGRect(x: 14, y: 18, width: 63, height: 14)
         let submitTextTextContent = "SUBMIT"
@@ -140,15 +151,15 @@ public class ClaimProgressResolve : NSObject {
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: UIColor.lightGray,
             .paragraphStyle: submitTextStyle,
-        ] as [NSAttributedStringKey: Any]
-
+            ] as [NSAttributedStringKey: Any]
+        
         let submitTextTextHeight: CGFloat = submitTextTextContent.boundingRect(with: CGSize(width: submitTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: submitTextFontAttributes, context: nil).height
         context.saveGState()
         context.clip(to: submitTextRect)
         submitTextTextContent.draw(in: CGRect(x: submitTextRect.minX, y: submitTextRect.minY + (submitTextRect.height - submitTextTextHeight) / 2, width: submitTextRect.width, height: submitTextTextHeight), withAttributes: submitTextFontAttributes)
         context.restoreGState()
-
-
+        
+        
         //// evaluteText Drawing
         let evaluteTextRect = CGRect(x: 100, y: 18, width: 82, height: 14)
         let evaluteTextTextContent = "EVALUATE"
@@ -158,15 +169,15 @@ public class ClaimProgressResolve : NSObject {
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: UIColor.lightGray,
             .paragraphStyle: evaluteTextStyle,
-        ] as [NSAttributedStringKey: Any]
-
+            ] as [NSAttributedStringKey: Any]
+        
         let evaluteTextTextHeight: CGFloat = evaluteTextTextContent.boundingRect(with: CGSize(width: evaluteTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: evaluteTextFontAttributes, context: nil).height
         context.saveGState()
         context.clip(to: evaluteTextRect)
         evaluteTextTextContent.draw(in: CGRect(x: evaluteTextRect.minX, y: evaluteTextRect.minY + (evaluteTextRect.height - evaluteTextTextHeight) / 2, width: evaluteTextRect.width, height: evaluteTextTextHeight), withAttributes: evaluteTextFontAttributes)
         context.restoreGState()
-
-
+        
+        
         //// resolveText Drawing
         let resolveTextRect = CGRect(x: 214, y: 18, width: 73, height: 14)
         let resolveTextTextContent = "RESOLVE"
@@ -176,15 +187,15 @@ public class ClaimProgressResolve : NSObject {
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: darkGreyText,
             .paragraphStyle: resolveTextStyle,
-        ] as [NSAttributedStringKey: Any]
-
+            ] as [NSAttributedStringKey: Any]
+        
         let resolveTextTextHeight: CGFloat = resolveTextTextContent.boundingRect(with: CGSize(width: resolveTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: resolveTextFontAttributes, context: nil).height
         context.saveGState()
         context.clip(to: resolveTextRect)
         resolveTextTextContent.draw(in: CGRect(x: resolveTextRect.minX, y: resolveTextRect.minY + (resolveTextRect.height - resolveTextTextHeight) / 2, width: resolveTextRect.width, height: resolveTextTextHeight), withAttributes: resolveTextFontAttributes)
         context.restoreGState()
-
-
+        
+        
         //// closeText Drawing
         let closeTextRect = CGRect(x: 334, y: 18, width: 60, height: 14)
         let closeTextTextContent = "CLOSE"
@@ -194,33 +205,33 @@ public class ClaimProgressResolve : NSObject {
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: UIColor.lightGray,
             .paragraphStyle: closeTextStyle,
-        ] as [NSAttributedStringKey: Any]
-
+            ] as [NSAttributedStringKey: Any]
+        
         let closeTextTextHeight: CGFloat = closeTextTextContent.boundingRect(with: CGSize(width: closeTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: closeTextFontAttributes, context: nil).height
         context.saveGState()
         context.clip(to: closeTextRect)
         closeTextTextContent.draw(in: CGRect(x: closeTextRect.minX, y: closeTextRect.minY + (closeTextRect.height - closeTextTextHeight) / 2, width: closeTextRect.width, height: closeTextTextHeight), withAttributes: closeTextFontAttributes)
         context.restoreGState()
-
-
+        
+        
         //// resolvedBlueCircle 3 Drawing
         let resolvedBlueCircle3Path = UIBezierPath(ovalIn: CGRect(x: 131, y: 45, width: 20, height: 20))
         blueCompleteColor.setFill()
         resolvedBlueCircle3Path.fill()
-
-
+        
+        
         //// resolvedBlueCircle Drawing
         let resolvedBlueCirclePath = UIBezierPath(ovalIn: CGRect(x: 131, y: 45, width: 20, height: 20))
         blueCompleteColor.setFill()
         resolvedBlueCirclePath.fill()
-
-
+        
+        
         //// resoveBlueCircle Drawing
         let resoveBlueCirclePath = UIBezierPath(ovalIn: CGRect(x: 240, y: 45, width: 20, height: 20))
         blueCompleteColor.setFill()
         resoveBlueCirclePath.fill()
-
-
+        
+        
         //// evaluateCheckMark
         //// Group
         //// Bezier Drawing
@@ -245,62 +256,57 @@ public class ClaimProgressResolve : NSObject {
         bezierPath.close()
         checkMarkColor.setFill()
         bezierPath.fill()
-
-
-
-
-        if (isHidden) {
-            //// Bezier 2 Drawing
-            let bezier2Path = UIBezierPath()
-            bezier2Path.move(to: CGPoint(x: 146.32, y: 50))
-            bezier2Path.addLine(to: CGPoint(x: 147.93, y: 51.61))
-            bezier2Path.addLine(to: CGPoint(x: 139.14, y: 60.54))
-            bezier2Path.addLine(to: CGPoint(x: 134, y: 54.92))
-            bezier2Path.addLine(to: CGPoint(x: 135.66, y: 53.35))
-            bezier2Path.addLine(to: CGPoint(x: 139.2, y: 57.22))
-            bezier2Path.addLine(to: CGPoint(x: 146.32, y: 50))
-            bezier2Path.close()
-            checkMarkWhite.setFill()
-            bezier2Path.fill()
-        }
+        
+        //// Bezier 2 Drawing
+        let bezier2Path = UIBezierPath()
+        bezier2Path.move(to: CGPoint(x: 146.32, y: 50))
+        bezier2Path.addLine(to: CGPoint(x: 147.93, y: 51.61))
+        bezier2Path.addLine(to: CGPoint(x: 139.14, y: 60.54))
+        bezier2Path.addLine(to: CGPoint(x: 134, y: 54.92))
+        bezier2Path.addLine(to: CGPoint(x: 135.66, y: 53.35))
+        bezier2Path.addLine(to: CGPoint(x: 139.2, y: 57.22))
+        bezier2Path.addLine(to: CGPoint(x: 146.32, y: 50))
+        bezier2Path.close()
+        checkMarkWhite.setFill()
+        bezier2Path.fill()
         
         context.restoreGState()
-
+        
     }
-
-
-
-
+    
+    
+    
+    
     @objc(ClaimProgressResolveResizingBehavior)
     public enum ResizingBehavior: Int {
         case aspectFit /// The content is proportionally resized to fit into the target rectangle.
         case aspectFill /// The content is proportionally resized to completely fill the target rectangle.
         case stretch /// The content is stretched to match the entire target rectangle.
         case center /// The content is centered in the target rectangle, but it is NOT resized.
-
+        
         public func apply(rect: CGRect, target: CGRect) -> CGRect {
             if rect == target || target == CGRect.zero {
                 return rect
             }
-
+            
             var scales = CGSize.zero
             scales.width = abs(target.width / rect.width)
             scales.height = abs(target.height / rect.height)
-
+            
             switch self {
-                case .aspectFit:
-                    scales.width = min(scales.width, scales.height)
-                    scales.height = scales.width
-                case .aspectFill:
-                    scales.width = max(scales.width, scales.height)
-                    scales.height = scales.width
-                case .stretch:
-                    break
-                case .center:
-                    scales.width = 1
-                    scales.height = 1
+            case .aspectFit:
+                scales.width = min(scales.width, scales.height)
+                scales.height = scales.width
+            case .aspectFill:
+                scales.width = max(scales.width, scales.height)
+                scales.height = scales.width
+            case .stretch:
+                break
+            case .center:
+                scales.width = 1
+                scales.height = 1
             }
-
+            
             var result = rect.standardized
             result.size.width *= scales.width
             result.size.height *= scales.height

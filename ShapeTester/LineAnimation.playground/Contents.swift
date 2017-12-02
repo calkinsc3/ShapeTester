@@ -13,6 +13,7 @@ class MyViewController : UIViewController {
     let greyProgressBarColor = UIColor(red: 0.847, green: 0.847, blue: 0.847, alpha: 1.000)
     
     override func loadView() {
+
         let view = UIView()
         view.backgroundColor = .white
         self.view = view
