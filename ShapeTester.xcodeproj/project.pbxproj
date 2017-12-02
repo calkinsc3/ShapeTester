@@ -110,9 +110,9 @@
 		9475ECB31FD2B9230070C791 /* FinalProgress */ = {
 			isa = PBXGroup;
 			children = (
-				9475ECBC1FD2BE990070C791 /* ClaimProgressClose.swift */,
 				9475ECBB1FD2BE990070C791 /* ClaimProgressEvaluate.swift */,
 				9475ECBD1FD2BE990070C791 /* ClaimProgressResolve.swift */,
+				9475ECBC1FD2BE990070C791 /* ClaimProgressClose.swift */,
 				9475ECC91FD2C12A0070C791 /* ClaimProgressViews.swift */,
 				9475ECCB1FD2C4E00070C791 /* ClaimProgressViewController.swift */,
 			);
