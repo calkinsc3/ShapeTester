@@ -72,8 +72,6 @@ public class ClaimProgressResolve : NSObject {
         
         
         //// submitCheckMark
-        //// Group 3
-        //// Bezier 7 Drawing
         let greenCirclePath = UIBezierPath()
         greenCirclePath.move(to: CGPoint(x: 45, y: 45))
         greenCirclePath.addCurve(to: CGPoint(x: 48.9, y: 45.78), controlPoint1: CGPoint(x: 46.38, y: 45), controlPoint2: CGPoint(x: 47.68, y: 45.26))
@@ -97,7 +95,7 @@ public class ClaimProgressResolve : NSObject {
         greenCirclePath.fill()
         
         
-        //// Bezier 8 Drawing
+        //// submit white checkmark
         let whiteCheckMarkPath = UIBezierPath()
         whiteCheckMarkPath.move(to: CGPoint(x: 50.33, y: 50))
         whiteCheckMarkPath.addLine(to: CGPoint(x: 51.93, y: 51.61))
@@ -110,19 +108,20 @@ public class ClaimProgressResolve : NSObject {
         checkMarkWhite.setFill()
         whiteCheckMarkPath.fill()
         
-        //// blueProgressBar Drawing
+        //// blueProgressBar Drawing - progress line from SUBMIT to EVALUATE
         let blueProgressBarPath = UIBezierPath()
         blueProgressBarPath.move(to: CGPoint(x: 49, y: 70))
-        blueProgressBarPath.addLine(to: CGPoint(x: 230, y: 70))
+        blueProgressBarPath.addLine(to: CGPoint(x: 120, y: 70))
         
         //create shape for path
         let lineAnimationShapeLayer = CAShapeLayer()
         lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
         lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
         lineAnimationShapeLayer.lineWidth = 4
+        lineAnimationShapeLayer.zPosition = 1
         lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
         
-        //        //animate the line with stroke end
+        // animate the line with stroke end
         let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineAnimation.fromValue = 0
         lineAnimation.duration = 2
@@ -131,6 +130,27 @@ public class ClaimProgressResolve : NSObject {
         cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
         
         
+        // blueProgressBar Drawing - progress line from EVALUATE to Resolve
+        let blueEvalToResolve = UIBezierPath()
+        blueEvalToResolve.move(to: CGPoint(x: 135, y: 70))
+        blueEvalToResolve.addLine(to: CGPoint(x: 235, y: 70))
+        
+        //create shape for path
+        let lineEvalToResolveShape = CAShapeLayer()
+        lineEvalToResolveShape.fillColor = blueProgressColor.cgColor
+        lineEvalToResolveShape.strokeColor = blueProgressColor.cgColor
+        lineEvalToResolveShape.lineWidth = 4
+        lineEvalToResolveShape.path = blueEvalToResolve.cgPath
+        
+        //animate the line with stroke end
+        let lineEvalToResolveAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        lineEvalToResolveAnimation.fromValue = 0
+        lineEvalToResolveAnimation.duration = 2
+        lineEvalToResolveAnimation.repeatCount = 4
+        lineEvalToResolveShape.add(lineEvalToResolveAnimation, forKey: "strokeEnd")
+        cgViewToAnimate.addSublayer(lineEvalToResolveShape)
+        
+
         //// submitText Drawing
         let submitTextRect = CGRect(x: 14, y: 18, width: 63, height: 14)
         let submitTextTextContent = "SUBMIT"
