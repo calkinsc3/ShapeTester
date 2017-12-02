@@ -19,7 +19,7 @@ class MyViewController : UIViewController {
         
         let linePath = UIBezierPath()
         linePath.move(to: CGPoint(x: 10, y: 50))
-        linePath.addLine(to: CGPoint(x: 300, y: 50))
+        linePath.addLine(to: CGPoint(x: 320, y: 50))
         
         //create shape for path
         let shapeLayer = CAShapeLayer()

@@ -8,17 +8,19 @@
 
 import UIKit
 
+@IBDesignable
 class ClaimProgressEvaluateView: UIView {
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        ClaimProgressEvaluate.drawClaimProgressBar(frame: rect, resizing: .aspectFit, isHidden: true)
+        ClaimProgressEvaluate.drawClaimProgressBar(frame: rect, resizing: .aspectFit, isHidden: true, cgViewToAnimate: self.layer)
     }
     
 }
 
+@IBDesignable
 class ClaimProgressResolveView: UIView {
     
     // Only override draw() if you perform custom drawing.
@@ -29,7 +31,7 @@ class ClaimProgressResolveView: UIView {
     }
     
 }
-
+@IBDesignable
 class ClaimProgressCloseView: UIView {
     
     // Only override draw() if you perform custom drawing.

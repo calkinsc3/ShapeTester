@@ -14,7 +14,10 @@ public class ClaimProgressEvaluate : NSObject {
 
     //// Drawing Methods
 
-    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 100), resizing: ResizingBehavior = .aspectFit, isHidden: Bool = false) {
+    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 100),
+                                                         resizing: ResizingBehavior = .aspectFit,
+                                                         isHidden: Bool = false,
+                                                         cgViewToAnimate: CALayer) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -71,18 +74,35 @@ public class ClaimProgressEvaluate : NSObject {
 
         //// blueProgressBar Drawing
         let blueProgressBarPath = UIBezierPath()
-        blueProgressBarPath.move(to: CGPoint(x: 41, y: 57))
-        blueProgressBarPath.addLine(to: CGPoint(x: 137, y: 57))
-        blueProgressBarPath.addLine(to: CGPoint(x: 137, y: 53))
-        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
-        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
-        blueProgressBarPath.close()
-        blueProgressColor.setFill()
-        blueProgressBarPath.fill()
-        blueCompleteColor.setStroke()
-        blueProgressBarPath.lineWidth = 0
-        blueProgressBarPath.lineCapStyle = .round
-        blueProgressBarPath.stroke()
+        blueProgressBarPath.move(to: CGPoint(x: 49, y: 70))
+        blueProgressBarPath.addLine(to: CGPoint(x: 130, y: 70))
+        //blueProgressBarPath.addLine(to: CGPoint(x: 137, y: 53))
+        //blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
+        //blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
+        //blueProgressBarPath.close()
+        
+//        blueProgressColor.setFill()
+//        blueProgressBarPath.fill()
+//        blueCompleteColor.setStroke()
+       // blueProgressBarPath.lineWidth = 4
+//        blueProgressBarPath.lineCapStyle = .round
+//        blueProgressBarPath.stroke()
+//
+//
+//        //create shape for path
+        let lineAnimationShapeLayer = CAShapeLayer()
+        lineAnimationShapeLayer.fillColor = blueCompleteColor.cgColor
+        lineAnimationShapeLayer.strokeColor = blueCompleteColor.cgColor
+        lineAnimationShapeLayer.lineWidth = 4
+        lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
+
+//        //animate the line with stroke end
+        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        lineAnimation.fromValue = 0
+        lineAnimation.duration = 2
+//        lineAnimation.repeatCount = 4
+        lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
+        cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
 
 
         //// submitCheckMark
