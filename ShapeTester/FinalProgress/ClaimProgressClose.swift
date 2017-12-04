@@ -14,7 +14,9 @@ public class ClaimProgressClose : NSObject {
 
     //// Drawing Methods
 
-    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 100), resizing: ResizingBehavior = .aspectFit, isHidden2: Bool = true) {
+    @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 100),
+                                                         resizing: ResizingBehavior = .aspectFit,
+                                                         cgViewToAnimate: CALayer) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -71,18 +73,35 @@ public class ClaimProgressClose : NSObject {
 
         //// blueProgressBar Drawing
         let blueProgressBarPath = UIBezierPath()
-        blueProgressBarPath.move(to: CGPoint(x: 41, y: 57))
-        blueProgressBarPath.addLine(to: CGPoint(x: 358, y: 57))
-        blueProgressBarPath.addLine(to: CGPoint(x: 358, y: 53))
-        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
-        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
-        blueProgressBarPath.close()
-        blueProgressColor.setFill()
-        blueProgressBarPath.fill()
-        blueCompleteColor.setStroke()
-        blueProgressBarPath.lineWidth = 0
-        blueProgressBarPath.lineCapStyle = .round
-        blueProgressBarPath.stroke()
+        blueProgressBarPath.move(to: CGPoint(x: 47, y: 70))
+        blueProgressBarPath.addLine(to: CGPoint(x: 335, y: 70))
+//        blueProgressBarPath.addLine(to: CGPoint(x: 358, y: 53))
+//        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
+//        blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
+//        blueProgressBarPath.close()
+//        blueProgressColor.setFill()
+//        blueProgressBarPath.fill()
+//        blueCompleteColor.setStroke()
+//        blueProgressBarPath.lineWidth = 0
+//        blueProgressBarPath.lineCapStyle = .round
+//        blueProgressBarPath.stroke()
+        
+        //animate progress bar
+        //create shape for path
+        let lineCloseShape = CAShapeLayer()
+        lineCloseShape.fillColor = blueProgressColor.cgColor
+        lineCloseShape.fillRule = kCAFillRuleEvenOdd
+        lineCloseShape.strokeColor = blueProgressColor.cgColor
+        lineCloseShape.lineWidth = 4
+        lineCloseShape.path = blueProgressBarPath.cgPath
+        
+        //animate the line with stroke end
+        let lineCloseAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        lineCloseAnimation.fromValue = 0
+        lineCloseAnimation.duration = 2
+        //lineEvalToResolveAnimation.repeatCount = 4
+        lineCloseShape.add(lineCloseAnimation, forKey: "strokeEnd")
+        cgViewToAnimate.addSublayer(lineCloseShape)
 
 
         //// submitText Drawing
@@ -206,10 +225,7 @@ public class ClaimProgressClose : NSObject {
         checkMarkColor.setFill()
         bezier5Path.fill()
 
-
-
-
-        if (isHidden2) {
+       
             //// Bezier 6 Drawing
             let bezier6Path = UIBezierPath()
             bezier6Path.move(to: CGPoint(x: 50.33, y: 50))
@@ -222,40 +238,38 @@ public class ClaimProgressClose : NSObject {
             bezier6Path.close()
             checkMarkWhite.setFill()
             bezier6Path.fill()
-        }
-
-
-
-
-        //// evaluateCheckMark
-        //// Group
-        //// Bezier Drawing
-        let bezierPath = UIBezierPath()
-        bezierPath.move(to: CGPoint(x: 141, y: 45))
-        bezierPath.addCurve(to: CGPoint(x: 144.9, y: 45.78), controlPoint1: CGPoint(x: 142.38, y: 45), controlPoint2: CGPoint(x: 143.68, y: 45.26))
-        bezierPath.addCurve(to: CGPoint(x: 148.08, y: 47.92), controlPoint1: CGPoint(x: 146.12, y: 46.31), controlPoint2: CGPoint(x: 147.18, y: 47.02))
-        bezierPath.addCurve(to: CGPoint(x: 150.22, y: 51.1), controlPoint1: CGPoint(x: 148.98, y: 48.82), controlPoint2: CGPoint(x: 149.69, y: 49.88))
-        bezierPath.addCurve(to: CGPoint(x: 151, y: 55), controlPoint1: CGPoint(x: 150.74, y: 52.32), controlPoint2: CGPoint(x: 151, y: 53.62))
-        bezierPath.addCurve(to: CGPoint(x: 150.22, y: 58.9), controlPoint1: CGPoint(x: 151, y: 56.38), controlPoint2: CGPoint(x: 150.74, y: 57.68))
-        bezierPath.addCurve(to: CGPoint(x: 148.08, y: 62.08), controlPoint1: CGPoint(x: 149.69, y: 60.12), controlPoint2: CGPoint(x: 148.98, y: 61.18))
-        bezierPath.addCurve(to: CGPoint(x: 144.9, y: 64.22), controlPoint1: CGPoint(x: 147.18, y: 62.98), controlPoint2: CGPoint(x: 146.12, y: 63.69))
-        bezierPath.addCurve(to: CGPoint(x: 141, y: 65), controlPoint1: CGPoint(x: 143.68, y: 64.74), controlPoint2: CGPoint(x: 142.38, y: 65))
-        bezierPath.addCurve(to: CGPoint(x: 137.1, y: 64.22), controlPoint1: CGPoint(x: 139.62, y: 65), controlPoint2: CGPoint(x: 138.32, y: 64.74))
-        bezierPath.addCurve(to: CGPoint(x: 133.92, y: 62.08), controlPoint1: CGPoint(x: 135.88, y: 63.69), controlPoint2: CGPoint(x: 134.82, y: 62.98))
-        bezierPath.addCurve(to: CGPoint(x: 131.78, y: 58.9), controlPoint1: CGPoint(x: 133.02, y: 61.18), controlPoint2: CGPoint(x: 132.31, y: 60.12))
-        bezierPath.addCurve(to: CGPoint(x: 131, y: 55), controlPoint1: CGPoint(x: 131.26, y: 57.68), controlPoint2: CGPoint(x: 131, y: 56.38))
-        bezierPath.addCurve(to: CGPoint(x: 131.78, y: 51.1), controlPoint1: CGPoint(x: 131, y: 53.62), controlPoint2: CGPoint(x: 131.26, y: 52.32))
-        bezierPath.addCurve(to: CGPoint(x: 133.92, y: 47.92), controlPoint1: CGPoint(x: 132.31, y: 49.88), controlPoint2: CGPoint(x: 133.02, y: 48.82))
-        bezierPath.addCurve(to: CGPoint(x: 137.1, y: 45.78), controlPoint1: CGPoint(x: 134.82, y: 47.02), controlPoint2: CGPoint(x: 135.88, y: 46.31))
-        bezierPath.addCurve(to: CGPoint(x: 141, y: 45), controlPoint1: CGPoint(x: 138.32, y: 45.26), controlPoint2: CGPoint(x: 139.62, y: 45))
-        bezierPath.close()
-        checkMarkColor.setFill()
-        bezierPath.fill()
-
-
-
-
-        if (isHidden2) {
+    
+    
+    
+    //// evaluateCheckMark
+    //// Group
+    //// Bezier Drawing
+    let bezierPath = UIBezierPath()
+    bezierPath.move(to: CGPoint(x: 141, y: 45))
+    bezierPath.addCurve(to: CGPoint(x: 144.9, y: 45.78), controlPoint1: CGPoint(x: 142.38, y: 45), controlPoint2: CGPoint(x: 143.68, y: 45.26))
+    bezierPath.addCurve(to: CGPoint(x: 148.08, y: 47.92), controlPoint1: CGPoint(x: 146.12, y: 46.31), controlPoint2: CGPoint(x: 147.18, y: 47.02))
+    bezierPath.addCurve(to: CGPoint(x: 150.22, y: 51.1), controlPoint1: CGPoint(x: 148.98, y: 48.82), controlPoint2: CGPoint(x: 149.69, y: 49.88))
+    bezierPath.addCurve(to: CGPoint(x: 151, y: 55), controlPoint1: CGPoint(x: 150.74, y: 52.32), controlPoint2: CGPoint(x: 151, y: 53.62))
+    bezierPath.addCurve(to: CGPoint(x: 150.22, y: 58.9), controlPoint1: CGPoint(x: 151, y: 56.38), controlPoint2: CGPoint(x: 150.74, y: 57.68))
+    bezierPath.addCurve(to: CGPoint(x: 148.08, y: 62.08), controlPoint1: CGPoint(x: 149.69, y: 60.12), controlPoint2: CGPoint(x: 148.98, y: 61.18))
+    bezierPath.addCurve(to: CGPoint(x: 144.9, y: 64.22), controlPoint1: CGPoint(x: 147.18, y: 62.98), controlPoint2: CGPoint(x: 146.12, y: 63.69))
+    bezierPath.addCurve(to: CGPoint(x: 141, y: 65), controlPoint1: CGPoint(x: 143.68, y: 64.74), controlPoint2: CGPoint(x: 142.38, y: 65))
+    bezierPath.addCurve(to: CGPoint(x: 137.1, y: 64.22), controlPoint1: CGPoint(x: 139.62, y: 65), controlPoint2: CGPoint(x: 138.32, y: 64.74))
+    bezierPath.addCurve(to: CGPoint(x: 133.92, y: 62.08), controlPoint1: CGPoint(x: 135.88, y: 63.69), controlPoint2: CGPoint(x: 134.82, y: 62.98))
+    bezierPath.addCurve(to: CGPoint(x: 131.78, y: 58.9), controlPoint1: CGPoint(x: 133.02, y: 61.18), controlPoint2: CGPoint(x: 132.31, y: 60.12))
+    bezierPath.addCurve(to: CGPoint(x: 131, y: 55), controlPoint1: CGPoint(x: 131.26, y: 57.68), controlPoint2: CGPoint(x: 131, y: 56.38))
+    bezierPath.addCurve(to: CGPoint(x: 131.78, y: 51.1), controlPoint1: CGPoint(x: 131, y: 53.62), controlPoint2: CGPoint(x: 131.26, y: 52.32))
+    bezierPath.addCurve(to: CGPoint(x: 133.92, y: 47.92), controlPoint1: CGPoint(x: 132.31, y: 49.88), controlPoint2: CGPoint(x: 133.02, y: 48.82))
+    bezierPath.addCurve(to: CGPoint(x: 137.1, y: 45.78), controlPoint1: CGPoint(x: 134.82, y: 47.02), controlPoint2: CGPoint(x: 135.88, y: 46.31))
+    bezierPath.addCurve(to: CGPoint(x: 141, y: 45), controlPoint1: CGPoint(x: 138.32, y: 45.26), controlPoint2: CGPoint(x: 139.62, y: 45))
+    bezierPath.close()
+    checkMarkColor.setFill()
+    bezierPath.fill()
+    
+    
+    
+    
+    
             //// Bezier 2 Drawing
             let bezier2Path = UIBezierPath()
             bezier2Path.move(to: CGPoint(x: 146.32, y: 50))
@@ -268,7 +282,7 @@ public class ClaimProgressClose : NSObject {
             bezier2Path.close()
             checkMarkWhite.setFill()
             bezier2Path.fill()
-        }
+    
 
 
 
@@ -298,10 +312,6 @@ public class ClaimProgressClose : NSObject {
         checkMarkColor.setFill()
         bezier3Path.fill()
 
-
-
-
-        if (isHidden2) {
             //// Bezier 4 Drawing
             let bezier4Path = UIBezierPath()
             bezier4Path.move(to: CGPoint(x: 255.32, y: 50))
@@ -314,14 +324,11 @@ public class ClaimProgressClose : NSObject {
             bezier4Path.close()
             checkMarkWhite.setFill()
             bezier4Path.fill()
-        }
+
         
         context.restoreGState()
 
     }
-
-
-
 
     @objc(ClaimProgressCloseResizingBehavior)
     public enum ResizingBehavior: Int {

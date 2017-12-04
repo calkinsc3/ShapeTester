@@ -38,7 +38,7 @@ class ClaimProgressCloseView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        ClaimProgressClose.drawClaimProgressBar(frame: rect, resizing: .aspectFit, isHidden2: true)
+        ClaimProgressClose.drawClaimProgressBar(frame: rect, resizing: .aspectFit, cgViewToAnimate: self.layer)
     }
     
 }
