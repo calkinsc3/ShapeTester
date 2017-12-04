@@ -110,30 +110,41 @@ public class ClaimProgressResolve : NSObject {
         
         //// blueProgressBar Drawing - progress line from SUBMIT to EVALUATE
         let blueProgressBarPath = UIBezierPath()
-        blueProgressBarPath.move(to: CGPoint(x: 49, y: 70))
-        blueProgressBarPath.addLine(to: CGPoint(x: 120, y: 70))
+        blueProgressBarPath.move(to: CGPoint(x: 54, y: 57))
+        blueProgressBarPath.addLine(to: CGPoint(x: 132, y: 57))
+        blueProgressBarPath.addLine(to: CGPoint(x: 132, y: 53))
+        blueProgressBarPath.addLine(to: CGPoint(x: 54, y: 53))
+        blueProgressBarPath.addLine(to: CGPoint(x: 54, y: 57))
+        blueProgressBarPath.close()
+        blueProgressColor.setFill()
+        blueProgressBarPath.fill()
+        blueCompleteColor.setStroke()
+        blueProgressBarPath.lineWidth = 0
+        blueProgressBarPath.lineCapStyle = .round
+        blueProgressBarPath.stroke()
         
         //create shape for path
-        let lineAnimationShapeLayer = CAShapeLayer()
-        lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
-        lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
-        lineAnimationShapeLayer.lineWidth = 4
-        lineAnimationShapeLayer.zPosition = 1
-        lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
-        
-        // animate the line with stroke end
-        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        lineAnimation.fromValue = 0
-        lineAnimation.duration = 2
-        lineAnimation.repeatCount = 4
-        lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
-        cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
+//        let lineAnimationShapeLayer = CAShapeLayer()
+//        lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
+//        //lineAnimationShapeLayer.fillRule = kCAFillRuleNonZero
+//        lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
+//        lineAnimationShapeLayer.lineWidth = 4
+//        lineAnimationShapeLayer.zPosition = 1
+//        lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
+//
+//        // animate the line with stroke end
+//        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
+//        lineAnimation.fromValue = 0
+//        lineAnimation.duration = 2
+//        lineAnimation.repeatCount = 4
+//        lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
+//        cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
         
         
         // blueProgressBar Drawing - progress line from EVALUATE to Resolve
         let blueEvalToResolve = UIBezierPath()
         blueEvalToResolve.move(to: CGPoint(x: 135, y: 70))
-        blueEvalToResolve.addLine(to: CGPoint(x: 235, y: 70))
+        blueEvalToResolve.addLine(to: CGPoint(x: 230, y: 70))
         
         //create shape for path
         let lineEvalToResolveShape = CAShapeLayer()
@@ -146,7 +157,7 @@ public class ClaimProgressResolve : NSObject {
         let lineEvalToResolveAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineEvalToResolveAnimation.fromValue = 0
         lineEvalToResolveAnimation.duration = 2
-        lineEvalToResolveAnimation.repeatCount = 4
+        //lineEvalToResolveAnimation.repeatCount = 4
         lineEvalToResolveShape.add(lineEvalToResolveAnimation, forKey: "strokeEnd")
         cgViewToAnimate.addSublayer(lineEvalToResolveShape)
         

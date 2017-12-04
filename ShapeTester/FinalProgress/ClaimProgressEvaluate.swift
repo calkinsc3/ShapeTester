@@ -100,7 +100,7 @@ public class ClaimProgressEvaluate : NSObject {
         let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineAnimation.fromValue = 0
         lineAnimation.duration = 2
-        lineAnimation.repeatCount = 4
+        //lineAnimation.repeatCount = 4
         lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
         cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
 
