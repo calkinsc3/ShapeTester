@@ -162,11 +162,20 @@
                                     <constraint firstAttribute="height" constant="130" id="9pn-HY-iH1"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LZ-Tb-aHe" customClass="ClaimCircleView" customModule="ShapeTester" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="616" width="414" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="9WZ-mf-2U8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Zlw-nW-DkO" firstAttribute="top" secondItem="0u5-Q2-ZW9" secondAttribute="bottom" constant="20" id="2p8-su-hlT"/>
                             <constraint firstItem="6Za-VI-bC4" firstAttribute="trailing" secondItem="aBR-EX-gqh" secondAttribute="trailing" constant="8" id="5Eb-Nn-To0"/>
+                            <constraint firstItem="6Za-VI-bC4" firstAttribute="trailing" secondItem="5LZ-Tb-aHe" secondAttribute="trailing" id="7eb-OO-1JY"/>
+                            <constraint firstItem="5LZ-Tb-aHe" firstAttribute="leading" secondItem="6Za-VI-bC4" secondAttribute="leading" id="AKO-RH-J1i"/>
                             <constraint firstItem="6Za-VI-bC4" firstAttribute="trailing" secondItem="0u5-Q2-ZW9" secondAttribute="trailing" constant="8" id="PCj-1J-zqm"/>
                             <constraint firstItem="aBR-EX-gqh" firstAttribute="top" secondItem="Zlw-nW-DkO" secondAttribute="bottom" constant="20" id="SiV-W7-RRi"/>
                             <constraint firstItem="6Za-VI-bC4" firstAttribute="trailing" secondItem="Zlw-nW-DkO" secondAttribute="trailing" constant="8" id="TC3-KL-FUo"/>
@@ -174,6 +183,7 @@
                             <constraint firstItem="Zlw-nW-DkO" firstAttribute="leading" secondItem="6Za-VI-bC4" secondAttribute="leading" constant="8" id="Xpr-Vg-RJT"/>
                             <constraint firstItem="aBR-EX-gqh" firstAttribute="leading" secondItem="6Za-VI-bC4" secondAttribute="leading" constant="8" id="cdl-ps-EBZ"/>
                             <constraint firstItem="0u5-Q2-ZW9" firstAttribute="top" secondItem="GYP-RC-IYl" secondAttribute="topMargin" constant="8" id="tTf-SF-coY"/>
+                            <constraint firstItem="6Za-VI-bC4" firstAttribute="bottom" secondItem="5LZ-Tb-aHe" secondAttribute="bottom" id="ubU-Ab-rLy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Za-VI-bC4"/>
                     </view>

@@ -42,3 +42,11 @@ class ClaimProgressCloseView: UIView {
     }
     
 }
+
+@IBDesignable
+class ClaimCircleView: UIView {
+    override func draw(_ rect: CGRect) {
+        //Draw circle
+        CircleTransformTest.drawCircleTransform(frame: rect, resizing: .aspectFit)
+    }
+}

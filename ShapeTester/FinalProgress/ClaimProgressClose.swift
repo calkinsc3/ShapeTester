@@ -99,7 +99,7 @@ public class ClaimProgressClose : NSObject {
         let lineCloseAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineCloseAnimation.fromValue = 0
         lineCloseAnimation.duration = 2
-        //lineEvalToResolveAnimation.repeatCount = 4
+        lineCloseAnimation.repeatCount = 4
         lineCloseShape.add(lineCloseAnimation, forKey: "strokeEnd")
         cgViewToAnimate.addSublayer(lineCloseShape)
 

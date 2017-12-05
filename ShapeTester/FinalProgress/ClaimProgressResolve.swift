@@ -157,7 +157,7 @@ public class ClaimProgressResolve : NSObject {
         let lineEvalToResolveAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineEvalToResolveAnimation.fromValue = 0
         lineEvalToResolveAnimation.duration = 2
-        //lineEvalToResolveAnimation.repeatCount = 4
+        lineEvalToResolveAnimation.repeatCount = 4
         lineEvalToResolveShape.add(lineEvalToResolveAnimation, forKey: "strokeEnd")
         cgViewToAnimate.addSublayer(lineEvalToResolveShape)
         

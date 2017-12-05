@@ -14,6 +14,7 @@
 		9422D86B1FAC76E100DC5C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9422D86A1FAC76E100DC5C68 /* Assets.xcassets */; };
 		9422D86E1FAC76E100DC5C68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9422D86C1FAC76E100DC5C68 /* LaunchScreen.storyboard */; };
 		9422D8761FAC77F400DC5C68 /* ClaimProgressViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9422D8751FAC77F400DC5C68 /* ClaimProgressViewOld.swift */; };
+		942A61781FD6C49400C3D92F /* CircleTransformTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A61771FD6C49300C3D92F /* CircleTransformTest.swift */; };
 		9475ECAE1FD172110070C791 /* ClaimProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECAD1FD172110070C791 /* ClaimProgress.swift */; };
 		9475ECB21FD173870070C791 /* ClaimProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECB11FD173870070C791 /* ClaimProgressBarView.swift */; };
 		9475ECBE1FD2BE990070C791 /* ClaimProgressEvaluate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475ECBB1FD2BE990070C791 /* ClaimProgressEvaluate.swift */; };
@@ -34,6 +35,7 @@
 		9422D86D1FAC76E100DC5C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9422D86F1FAC76E100DC5C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9422D8751FAC77F400DC5C68 /* ClaimProgressViewOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressViewOld.swift; sourceTree = "<group>"; };
+		942A61771FD6C49300C3D92F /* CircleTransformTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransformTest.swift; sourceTree = "<group>"; };
 		9475ECAD1FD172110070C791 /* ClaimProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimProgress.swift; sourceTree = "<group>"; };
 		9475ECB11FD173870070C791 /* ClaimProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimProgressBarView.swift; sourceTree = "<group>"; };
 		9475ECBA1FD2BB700070C791 /* ProgressTester.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ProgressTester.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -92,6 +94,7 @@
 		9422D8621FAC76E100DC5C68 /* ShapeTester */ = {
 			isa = PBXGroup;
 			children = (
+				942A61771FD6C49300C3D92F /* CircleTransformTest.swift */,
 				9475ECBA1FD2BB700070C791 /* ProgressTester.playground */,
 				9475ECB31FD2B9230070C791 /* FinalProgress */,
 				2789F86D1FD1E7CA00D6AB93 /* LineAnimation.playground */,
@@ -197,6 +200,7 @@
 				9475ECBE1FD2BE990070C791 /* ClaimProgressEvaluate.swift in Sources */,
 				9475ECCC1FD2C4E00070C791 /* ClaimProgressViewController.swift in Sources */,
 				9475ECBF1FD2BE990070C791 /* ClaimProgressClose.swift in Sources */,
+				942A61781FD6C49400C3D92F /* CircleTransformTest.swift in Sources */,
 				9475ECB21FD173870070C791 /* ClaimProgressBarView.swift in Sources */,
 				9422D8641FAC76E100DC5C68 /* AppDelegate.swift in Sources */,
 				9422D8761FAC77F400DC5C68 /* ClaimProgressViewOld.swift in Sources */,

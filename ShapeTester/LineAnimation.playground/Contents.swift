@@ -39,6 +39,7 @@ class MyViewController : UIViewController {
         
         createAnimationGroup()
         fillCircles()
+        //circleTransform()
     
     }
     
@@ -109,6 +110,31 @@ class MyViewController : UIViewController {
         curveShapeLayter.add(animationGroup, forKey: "MyAnimation")
         
     }
+    
+//    func circleTransform() {
+//        //// General Declarations
+//        let context = UIGraphicsGetCurrentContext()!
+//
+//        //// Color Declarations
+//        let blueCompleteColor = UIColor(red: 0.098, green: 0.369, blue: 0.690, alpha: 1.000)
+//
+//        //// greyCircle Drawing
+//        let greyCirclePath = UIBezierPath(ovalIn: CGRect(x: 86, y: 26, width: 32, height: 32))
+//        UIColor.lightGray.setFill()
+//        greyCirclePath.fill()
+//
+//
+//        //// blueCircle Drawing
+//        context.saveGState()
+//        context.translateBy(x: 102, y: 42)
+//        context.scaleBy(x: 1.2, y: 1.2)
+//
+//        let blueCirclePath = UIBezierPath(ovalIn: CGRect(x: -10, y: -10, width: 20, height: 20))
+//        blueCompleteColor.setFill()
+//        blueCirclePath.fill()
+//
+//        context.restoreGState()
+//    }
 }
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()
