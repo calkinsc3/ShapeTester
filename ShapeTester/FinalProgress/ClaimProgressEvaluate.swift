@@ -16,13 +16,13 @@ public class ClaimProgressEvaluate : NSObject {
 
     @objc dynamic public class func drawClaimProgressBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 100),
                                                          resizing: ResizingBehavior = .aspectFit,
-                                                         isHidden: Bool = false,
                                                          cgViewToAnimate: CALayer) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame
         context.saveGState()
+        
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 400, height: 100), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 400, y: resizedFrame.height / 100)
@@ -71,44 +71,10 @@ public class ClaimProgressEvaluate : NSObject {
         greyProgressBarColor.setFill()
         greyCircleClosePath.fill()
 
-
-        //// blueProgressBar Drawing
-        let blueProgressBarPath = UIBezierPath()
-        blueProgressBarPath.move(to: CGPoint(x: 49, y: 70))
-        blueProgressBarPath.addLine(to: CGPoint(x: 130, y: 70))
-        //blueProgressBarPath.addLine(to: CGPoint(x: 137, y: 53))
-        //blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 53))
-        //blueProgressBarPath.addLine(to: CGPoint(x: 41, y: 57))
-        //blueProgressBarPath.close()
-        
-//        blueProgressColor.setFill()
-//        blueProgressBarPath.fill()
-//        blueCompleteColor.setStroke()
-       // blueProgressBarPath.lineWidth = 4
-//        blueProgressBarPath.lineCapStyle = .round
-//        blueProgressBarPath.stroke()
-//
-//
-//        //create shape for path
-        let lineAnimationShapeLayer = CAShapeLayer()
-        lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
-        lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
-        lineAnimationShapeLayer.lineWidth = 4
-        lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
-
-//        //animate the line with stroke end
-        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        lineAnimation.fromValue = 0
-        lineAnimation.duration = 2
-        lineAnimation.repeatCount = 4
-        lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
-        cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
-
-
         //// submitCheckMark
-        //// Group 3
         let submitCheckPath = UIBezierPath()
-        submitCheckPath.move(to: CGPoint(x: 45, y: 45))
+        let startOfSubmitPath = CGPoint(x: 45, y: 45)
+        submitCheckPath.move(to: startOfSubmitPath)
         submitCheckPath.addCurve(to: CGPoint(x: 48.9, y: 45.78), controlPoint1: CGPoint(x: 46.38, y: 45), controlPoint2: CGPoint(x: 47.68, y: 45.26))
         submitCheckPath.addCurve(to: CGPoint(x: 52.08, y: 47.92), controlPoint1: CGPoint(x: 50.12, y: 46.31), controlPoint2: CGPoint(x: 51.18, y: 47.02))
         submitCheckPath.addCurve(to: CGPoint(x: 54.22, y: 51.1), controlPoint1: CGPoint(x: 52.98, y: 48.82), controlPoint2: CGPoint(x: 53.69, y: 49.88))
@@ -129,25 +95,56 @@ public class ClaimProgressEvaluate : NSObject {
         checkMarkColor.setFill()
         submitCheckPath.fill()
 
-
-
-
-        if (isHidden) {
-            //// Bezier 8 Drawing
-            let bezier8Path = UIBezierPath()
-            bezier8Path.move(to: CGPoint(x: 50.33, y: 50))
-            bezier8Path.addLine(to: CGPoint(x: 51.93, y: 51.61))
-            bezier8Path.addLine(to: CGPoint(x: 43.14, y: 60.54))
-            bezier8Path.addLine(to: CGPoint(x: 38, y: 54.92))
-            bezier8Path.addLine(to: CGPoint(x: 39.66, y: 53.35))
-            bezier8Path.addLine(to: CGPoint(x: 43.2, y: 57.22))
-            bezier8Path.addLine(to: CGPoint(x: 50.33, y: 50))
-            bezier8Path.close()
-            checkMarkWhite.setFill()
-            bezier8Path.fill()
-        }
-
-
+        //// Draw submit white check
+        let submitCheckMarkPath = UIBezierPath()
+        submitCheckMarkPath.move(to: CGPoint(x: 50.33, y: 50))
+        submitCheckMarkPath.addLine(to: CGPoint(x: 51.93, y: 51.61))
+        submitCheckMarkPath.addLine(to: CGPoint(x: 43.14, y: 60.54))
+        submitCheckMarkPath.addLine(to: CGPoint(x: 38, y: 54.92))
+        submitCheckMarkPath.addLine(to: CGPoint(x: 39.66, y: 53.35))
+        submitCheckMarkPath.addLine(to: CGPoint(x: 43.2, y: 57.22))
+        submitCheckMarkPath.addLine(to: CGPoint(x: 50.33, y: 50))
+        submitCheckMarkPath.close()
+        checkMarkWhite.setFill()
+        submitCheckMarkPath.fill()
+        
+        
+        //// blueProgressBar Drawing
+        let blueProgressBarPath = UIBezierPath()
+        print("givenBoundsRect = \(cgViewToAnimate.bounds.size)")
+        
+        //SE - 320
+        let yForProgressLine = 69
+        let movePoint = CGPoint(x: 40, y: yForProgressLine)
+        let linePoint = CGPoint(x: 100, y: yForProgressLine)
+        
+        //X, 6, 7 8 - 375
+        //        let yForProgressLine = 70
+        //        let movePoint = CGPoint(x: 48, y: yForProgressLine)
+        //        let linePoint = CGPoint(x: 132, y: yForProgressLine)
+        
+        //Plus - 414
+//        let yForProgressLine = 70
+//        let movePoint = CGPoint(x: 53, y: yForProgressLine)
+//        let linePoint = CGPoint(x: 132, y: yForProgressLine)
+    
+        blueProgressBarPath.move(to: movePoint)
+        blueProgressBarPath.addLine(to: linePoint)
+        
+        //create shape for path
+        let lineAnimationShapeLayer = CAShapeLayer()
+        lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
+        lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
+        lineAnimationShapeLayer.lineWidth = 4
+        lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
+        
+        //animate the line with stroke end
+        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        lineAnimation.fromValue = 0
+        lineAnimation.duration = 2
+        lineAnimation.repeatCount = 2
+        lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
+        cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
 
 
         //// submitText Drawing
@@ -158,8 +155,7 @@ public class ClaimProgressEvaluate : NSObject {
         let submitTextFontAttributes = [
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: UIColor.lightGray,
-            .paragraphStyle: submitTextStyle,
-        ] as [NSAttributedStringKey: Any]
+            .paragraphStyle: submitTextStyle] as [NSAttributedStringKey: Any]
 
         let submitTextTextHeight: CGFloat = submitTextTextContent.boundingRect(with: CGSize(width: submitTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: submitTextFontAttributes, context: nil).height
         context.saveGState()
@@ -176,8 +172,7 @@ public class ClaimProgressEvaluate : NSObject {
         let evaluteTextFontAttributes = [
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: darkGreyText,
-            .paragraphStyle: evaluteTextStyle,
-        ] as [NSAttributedStringKey: Any]
+            .paragraphStyle: evaluteTextStyle] as [NSAttributedStringKey: Any]
 
         let evaluteTextTextHeight: CGFloat = evaluteTextTextContent.boundingRect(with: CGSize(width: evaluteTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: evaluteTextFontAttributes, context: nil).height
         context.saveGState()
@@ -194,8 +189,7 @@ public class ClaimProgressEvaluate : NSObject {
         let resolveTextFontAttributes = [
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: UIColor.lightGray,
-            .paragraphStyle: resolveTextStyle,
-        ] as [NSAttributedStringKey: Any]
+            .paragraphStyle: resolveTextStyle] as [NSAttributedStringKey: Any]
 
         let resolveTextTextHeight: CGFloat = resolveTextTextContent.boundingRect(with: CGSize(width: resolveTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: resolveTextFontAttributes, context: nil).height
         context.saveGState()
@@ -212,8 +206,7 @@ public class ClaimProgressEvaluate : NSObject {
         let closeTextFontAttributes = [
             .font: UIFont.systemFont(ofSize: UIFont.labelFontSize),
             .foregroundColor: UIColor.lightGray,
-            .paragraphStyle: closeTextStyle,
-        ] as [NSAttributedStringKey: Any]
+            .paragraphStyle: closeTextStyle] as [NSAttributedStringKey: Any]
 
         let closeTextTextHeight: CGFloat = closeTextTextContent.boundingRect(with: CGSize(width: closeTextRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: closeTextFontAttributes, context: nil).height
         context.saveGState()
@@ -222,7 +215,7 @@ public class ClaimProgressEvaluate : NSObject {
         context.restoreGState()
 
 
-        //// evaluateBlueCircle Drawing
+        //// evaluateBlueCircle Drawing - try to animate
         let evaluateBlueCirclePath = UIBezierPath(ovalIn: CGRect(x: 131, y: 45, width: 20, height: 20))
         blueCompleteColor.setFill()
         evaluateBlueCirclePath.fill()
@@ -230,8 +223,6 @@ public class ClaimProgressEvaluate : NSObject {
         context.restoreGState()
 
     }
-
-
 
 
     @objc(ClaimProgressEvaluateResizingBehavior)

@@ -15,7 +15,7 @@ class ClaimProgressEvaluateView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        ClaimProgressEvaluate.drawClaimProgressBar(frame: rect, resizing: .aspectFit, isHidden: true, cgViewToAnimate: self.layer)
+        ClaimProgressEvaluate.drawClaimProgressBar(frame: rect, resizing: .aspectFit, cgViewToAnimate: self.layer)
     }
     
 }

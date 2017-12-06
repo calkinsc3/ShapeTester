@@ -143,8 +143,24 @@ public class ClaimProgressResolve : NSObject {
         
         // blueProgressBar Drawing - progress line from EVALUATE to Resolve
         let blueEvalToResolve = UIBezierPath()
-        blueEvalToResolve.move(to: CGPoint(x: 135, y: 70))
-        blueEvalToResolve.addLine(to: CGPoint(x: 230, y: 70))
+        
+        //SE - 320
+        let yForProgressLine = 69
+        let movePoint = CGPoint(x: 115, y: yForProgressLine)
+        let linePoint = CGPoint(x: 190, y: yForProgressLine)
+        
+        //X, 6, 7 8 - 375
+//        let yForProgressLine = 70
+//        let movePoint = CGPoint(x: 135, y: yForProgressLine)
+//        let linePoint = CGPoint(x: 230, y: yForProgressLine)
+        
+        //Plus - 414, 16 offset
+//        let yForProgressLine = 70
+//        let movePoint = CGPoint(x: 148, y: yForProgressLine)
+//        let linePoint = CGPoint(x: 246, y: yForProgressLine)
+        
+        blueEvalToResolve.move(to: movePoint)
+        blueEvalToResolve.addLine(to: linePoint)
         
         //create shape for path
         let lineEvalToResolveShape = CAShapeLayer()
@@ -157,7 +173,7 @@ public class ClaimProgressResolve : NSObject {
         let lineEvalToResolveAnimation = CABasicAnimation(keyPath: "strokeEnd")
         lineEvalToResolveAnimation.fromValue = 0
         lineEvalToResolveAnimation.duration = 2
-        lineEvalToResolveAnimation.repeatCount = 4
+        lineEvalToResolveAnimation.repeatCount = 2
         lineEvalToResolveShape.add(lineEvalToResolveAnimation, forKey: "strokeEnd")
         cgViewToAnimate.addSublayer(lineEvalToResolveShape)
         
