@@ -109,27 +109,38 @@ public class ClaimProgressEvaluate : NSObject {
         submitCheckMarkPath.fill()
         
         
+        //Progress bar demension dectection
+        let mainScreeWidth = UIScreen.main.bounds.width
+        var startProgressPoint = CGPoint(), endProgressPoint = CGPoint()
+        var yPosition = CGFloat(70.0) //default to 70
+        
+        if mainScreeWidth <= 320.0 {
+            //iPhone SE, 5s - 320
+            yPosition = 69.0
+            startProgressPoint.x = 40.0
+            startProgressPoint.y = yPosition
+            endProgressPoint.x = 100.0
+            endProgressPoint.y = yPosition
+            
+        } else if mainScreeWidth <= 375 {
+            //iPhone X, 6, 7 8
+            startProgressPoint.x = 40.0
+            startProgressPoint.y = yPosition
+            endProgressPoint.x = 100.0
+            endProgressPoint.y = yPosition
+            
+        } else {
+            //Plus phones
+            startProgressPoint.x = 53.0
+            startProgressPoint.y = yPosition
+            endProgressPoint.x = 132.0
+            endProgressPoint.y = yPosition
+        }
+        
         //// blueProgressBar Drawing
         let blueProgressBarPath = UIBezierPath()
-        print("givenBoundsRect = \(cgViewToAnimate.bounds.size)")
-        
-        //SE - 320
-        let yForProgressLine = 69
-        let movePoint = CGPoint(x: 40, y: yForProgressLine)
-        let linePoint = CGPoint(x: 100, y: yForProgressLine)
-        
-        //X, 6, 7 8 - 375
-        //        let yForProgressLine = 70
-        //        let movePoint = CGPoint(x: 48, y: yForProgressLine)
-        //        let linePoint = CGPoint(x: 132, y: yForProgressLine)
-        
-        //Plus - 414
-//        let yForProgressLine = 70
-//        let movePoint = CGPoint(x: 53, y: yForProgressLine)
-//        let linePoint = CGPoint(x: 132, y: yForProgressLine)
-    
-        blueProgressBarPath.move(to: movePoint)
-        blueProgressBarPath.addLine(to: linePoint)
+        blueProgressBarPath.move(to: startProgressPoint)
+        blueProgressBarPath.addLine(to: endProgressPoint)
         
         //create shape for path
         let lineAnimationShapeLayer = CAShapeLayer()

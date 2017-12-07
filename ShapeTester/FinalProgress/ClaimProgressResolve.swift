@@ -123,44 +123,38 @@ public class ClaimProgressResolve : NSObject {
         blueProgressBarPath.lineCapStyle = .round
         blueProgressBarPath.stroke()
         
-        //create shape for path
-//        let lineAnimationShapeLayer = CAShapeLayer()
-//        lineAnimationShapeLayer.fillColor = blueProgressColor.cgColor
-//        //lineAnimationShapeLayer.fillRule = kCAFillRuleNonZero
-//        lineAnimationShapeLayer.strokeColor = blueProgressColor.cgColor
-//        lineAnimationShapeLayer.lineWidth = 4
-//        lineAnimationShapeLayer.zPosition = 1
-//        lineAnimationShapeLayer.path = blueProgressBarPath.cgPath
-//
-//        // animate the line with stroke end
-//        let lineAnimation = CABasicAnimation(keyPath: "strokeEnd")
-//        lineAnimation.fromValue = 0
-//        lineAnimation.duration = 2
-//        lineAnimation.repeatCount = 4
-//        lineAnimationShapeLayer.add(lineAnimation, forKey: "strokeEnd")
-//        cgViewToAnimate.addSublayer(lineAnimationShapeLayer)
         
+        //Progress bar demension dectection
+        let mainScreeWidth = UIScreen.main.bounds.width
+        var startProgressPoint = CGPoint(), endProgressPoint = CGPoint()
+        var yPosition = CGFloat(70.0) //default to 70
         
-        // blueProgressBar Drawing - progress line from EVALUATE to Resolve
+        if mainScreeWidth <= 320.0 {
+            //iPhone SE, 5s - 320
+            yPosition = 69.0
+            startProgressPoint.x = 115.0
+            startProgressPoint.y = yPosition
+            endProgressPoint.x = 190.0
+            endProgressPoint.y = yPosition
+            
+        } else if mainScreeWidth <= 375 {
+            //iPhone X, 6, 7 8
+            startProgressPoint.x = 135.0
+            startProgressPoint.y = yPosition
+            endProgressPoint.x = 230.0
+            endProgressPoint.y = yPosition
+            
+        } else {
+            //Plus phones
+            startProgressPoint.x = 148.0
+            startProgressPoint.y = yPosition
+            endProgressPoint.x = 246.0
+            endProgressPoint.y = yPosition
+        }
+        
         let blueEvalToResolve = UIBezierPath()
-        
-        //SE - 320
-        let yForProgressLine = 69
-        let movePoint = CGPoint(x: 115, y: yForProgressLine)
-        let linePoint = CGPoint(x: 190, y: yForProgressLine)
-        
-        //X, 6, 7 8 - 375
-//        let yForProgressLine = 70
-//        let movePoint = CGPoint(x: 135, y: yForProgressLine)
-//        let linePoint = CGPoint(x: 230, y: yForProgressLine)
-        
-        //Plus - 414, 16 offset
-//        let yForProgressLine = 70
-//        let movePoint = CGPoint(x: 148, y: yForProgressLine)
-//        let linePoint = CGPoint(x: 246, y: yForProgressLine)
-        
-        blueEvalToResolve.move(to: movePoint)
-        blueEvalToResolve.addLine(to: linePoint)
+        blueEvalToResolve.move(to: startProgressPoint)
+        blueEvalToResolve.addLine(to: endProgressPoint)
         
         //create shape for path
         let lineEvalToResolveShape = CAShapeLayer()

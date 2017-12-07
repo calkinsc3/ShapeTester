@@ -8,6 +8,12 @@
 
 import UIKit
 
+//typealias ProgressLineBounds = (startPoint: CGPoint, endPoint: CGPoint)
+struct ProgressLineBounds {
+    var startPoint : CGPoint
+    var endPoint: CGPoint
+}
+
 @IBDesignable
 class ClaimProgressEvaluateView: UIView {
     
